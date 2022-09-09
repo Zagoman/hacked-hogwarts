@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+
+/* Layout */
+.grid_1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+#students {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min-max(300px, 1fr));
+}
+.student {
+  padding: 1rem;
+  border: 1px solid black;
+}
+.student div {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.student div:last-child {
+  grid-column: 1/-1;
+}
+.student img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.name {
+  padding-bottom: 0.5rem;
+}
+.name:last-child {
+  padding-bottom: 0rem;
+}
+.label {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 600px) {
+}
