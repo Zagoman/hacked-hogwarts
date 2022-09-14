@@ -8,32 +8,77 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header></header>
-    <main>
-      <section id="hero"></section>
-      <section id="students">
-        <template id="student_temp">
-          <article class="student grid_1-2">
-            <img src="images/abbott_h.png" alt="student" />
-            <div>
-              <span class="label">First name:</span>
-              <h3 data-name-order="first" class="name"></h3>
-              <span class="label">Middle name:</span>
-              <p data-name-order="middle" class="name"></p>
-              <span class="label">Last name:</span>
-              <p data-name-order="last" class="name"></p>
-              <span class="label">Nickname: </span>
-              <p data-name-order="nick_name" class="name"></p>
-            </div>
-            <div>
-              <span class="label">House:</span>
-              <p data-house="house" class="name"></p>
-            </div>
-          </article>
-        </template>
+    <header>
+      <section id="hero">
+        <h1>Hacking Hogwarts</h1>
       </section>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="#">EMMANUEL DON'T DO IT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside id="options">
+        <div class="sort_btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#E4D3A0" />
+            <rect x="6.24023" y="7.35901" width="2.03287" height="11.756" fill="#4C111F" />
+            <rect x="10.9836" y="4.88498" width="2.03287" height="14.2301" fill="#4C111F" />
+            <rect x="15.7269" y="9.62833" width="2.03287" height="9.4867" fill="#4C111F" /></svg
+          >Sort
+        </div>
+        <div class="filter_btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#E4D3A0" />
+            <path
+              d="M13.0663 19.1933C13.1883 19.1335 13.2911 19.0407 13.3631 18.9254C13.4351 18.8102 13.4735 18.6771 13.4737 18.5412V14.6211C13.4737 14.4281 13.5511 14.2424 13.6896 14.1053L18.1999 9.64447C18.3365 9.50961 18.445 9.34899 18.5191 9.17192C18.5932 8.99485 18.6315 8.80484 18.6317 8.61288V6.72949C18.6313 6.63318 18.6119 6.5379 18.5747 6.44909C18.5374 6.36028 18.483 6.27968 18.4146 6.21193C18.3461 6.14417 18.265 6.09057 18.1758 6.05421C18.0866 6.01785 17.9911 5.99943 17.8948 6.00001H6.10526C5.69778 6.00001 5.36841 6.3257 5.36841 6.72949V8.61288C5.36841 8.99972 5.52388 9.37109 5.8002 9.64447L10.3105 14.1053C10.3788 14.1728 10.4331 14.2531 10.4701 14.3416C10.5072 14.4301 10.5263 14.5252 10.5263 14.6211V19.2707C10.5263 19.8122 11.1026 20.1645 11.5926 19.922L13.0663 19.1933Z"
+              fill="#4C111F"
+            />
+          </svg>
+          Filter
+        </div>
+        <div class="search_btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#E4D3A0" />
+            <path
+              d="M18.9579 17.9937L14.4132 13.449C15.1185 12.5372 15.5 11.4225 15.5 10.25C15.5 8.84648 14.9522 7.53049 13.9617 6.53824C12.9712 5.546 11.6517 5 10.25 5C8.84823 5 7.52874 5.54775 6.53824 6.53824C5.546 7.52874 5 8.84648 5 10.25C5 11.6517 5.54775 12.9712 6.53824 13.9617C7.52874 14.954 8.84648 15.5 10.25 15.5C11.4225 15.5 12.5355 15.1185 13.4472 14.415L17.9919 18.9579C18.0053 18.9713 18.0211 18.9819 18.0385 18.9891C18.0559 18.9963 18.0746 19 18.0934 19C18.1123 19 18.131 18.9963 18.1484 18.9891C18.1658 18.9819 18.1816 18.9713 18.1949 18.9579L18.9579 18.1967C18.9713 18.1834 18.9819 18.1675 18.9891 18.1501C18.9963 18.1327 19 18.114 19 18.0952C19 18.0763 18.9963 18.0577 18.9891 18.0403C18.9819 18.0228 18.9713 18.007 18.9579 17.9937ZM13.022 13.022C12.28 13.7622 11.2965 14.17 10.25 14.17C9.20348 14.17 8.21999 13.7622 7.47799 13.022C6.73774 12.28 6.32999 11.2965 6.32999 10.25C6.32999 9.20348 6.73774 8.21824 7.47799 7.47799C8.21999 6.73774 9.20348 6.32999 10.25 6.32999C11.2965 6.32999 12.2817 6.73599 13.022 7.47799C13.7622 8.21999 14.17 9.20348 14.17 10.25C14.17 11.2965 13.7622 12.2817 13.022 13.022Z"
+              fill="#4C111F"
+            />
+          </svg>
+          <span>Search</span>
+          <input type="text" name="search" />
+        </div>
+      </aside>
+      <section id="students"></section>
     </main>
     <footer></footer>
+    <template id="student_temp">
+      <article class="student grid_2-5">
+        <div>
+          <img src="images/abbott_h.png" alt="student" />
+          <span class="label">Nickname: </span>
+          <p data-name-order="nick_name" class="name"></p>
+        </div>
+        <div>
+          <span class="label">First name:</span>
+          <h3 data-name-order="first" class="name"></h3>
+          <span class="label">Middle name:</span>
+          <p data-name-order="middle" class="name"></p>
+          <span class="label">Last name:</span>
+          <p data-name-order="last" class="name"></p>
+        </div>
+        <div>
+          <div>
+            <span class="label">House:</span>
+            <p data-house="house" class="name"></p>
+          </div>
+          <a href="#" class="btn">See more</a>
+        </div>
+      </article>
+    </template>
     <script type="module" src="main.js"></script>
   </body>
 </html>
