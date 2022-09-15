@@ -26,12 +26,15 @@ export default class View {
 
       if (!student.middleName) {
         clone.querySelector("span[data-label = middle_name]").style.display = "none";
+        clone.querySelector("p[data-name-order = middle]").style.display = "none";
       }
       if (!student.lastName) {
         clone.querySelector("span[data-label = last_name]").style.display = "none";
+        clone.querySelector("p[data-name-order = last]").style.display = "none";
       }
       if (!student.nickName) {
         clone.querySelector("span[data-label = nick_name]").style.display = "none";
+        clone.querySelector("p[data-name-order = nick_name]").style.display = "none";
       }
 
       parentNode.append(clone);
