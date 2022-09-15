@@ -36,6 +36,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 img {
   max-width: 100%;
 }
@@ -150,11 +153,17 @@ li a {
   color: var(--color-900);
   border-radius: var(--border-radius_general);
 }
+#opt_relative {
+  position: relative;
+  min-height: 5.5rem;
+}
 aside {
   display: flex;
   gap: var(--sp-m);
   padding-block: var(--sp-m);
   justify-content: center;
+  align-items: flex-start;
+  position: absolute;
 }
 .sort_btn,
 .filter_btn,
@@ -163,16 +172,77 @@ aside {
   color: var(--color-900);
   padding-block: var(--sp-xs);
   padding-inline: var(--sp-s);
-  border-radius: 40px;
+  border-radius: 20px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
   gap: var(--sp-s);
-  transition: background-color 300ms ease;
+  transition: all 300ms ease;
+}
+.search_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .sort_btn:hover,
 .filter_btn:hover,
 .search_btn:hover {
   background-color: var(--color-100);
+  cursor: pointer;
+}
+.sort_btn[data-popup="open"],
+.filter_btn[data-popup="open"] {
+  border-radius: 8px;
+}
+.sort_btn[data-popup="open"] form,
+.filter_btn[data-popup="open"] form {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sort_btn[data-popup="closed"] form,
+.filter_btn[data-popup="closed"] form {
+  display: none;
+  overflow: hidden;
+  transition: all 300ms;
+}
+.sort_btn form,
+.filter_btn form {
+  padding: var(--sp-s);
+}
+.sort_btn form div,
+.filter_btn form div {
+  display: flex;
+  gap: var(--sp-s);
+  padding-block: var(--sp-xxs);
+}
+.filter_trigger,
+.sort_trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-s);
+}
+input[type="radio"] {
+  display: block;
+  border: none;
+  appearance: none;
+  background-color: var(--color-900);
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+
+  border-radius: 50%;
+}
+input[type="radio"]:checked::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  position: absolute;
+  inset: 50% 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--color-700);
 }
 
 .search_btn input {
@@ -223,8 +293,11 @@ aside {
   .search_btn input {
     display: inline-block;
   }
-  .search_btn span {
+  .search_btn label {
     display: none;
+  }
+  .search_btn {
+    align-items: stretch;
   }
 
   /* Layout */

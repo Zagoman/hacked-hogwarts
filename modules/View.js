@@ -41,6 +41,14 @@ export default class View {
     });
   }
 
+  _HandleOptionsPopup() {
+    if (this.parentNode.dataset.popup === "closed") {
+      this.parentNode.dataset.popup = "open";
+    } else {
+      this.parentNode.dataset.popup = "closed";
+    }
+  }
+
   _UpdateUI() {
     console.log("updateUI");
   }
