@@ -214,6 +214,7 @@ aside {
   .student > div:last-child {
     display: flex;
     flex-direction: row;
+    margin-top: auto;
   }
   .student > div .btn {
     margin-left: auto;
