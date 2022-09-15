@@ -68,10 +68,6 @@ p {
 a {
   text-decoration: none;
   color: var(--color-200);
-  animation: cursor 1s linear infinite;
-}
-input {
-  animation: cursor 1s linear infinite;
 }
 /* Layout */
 header {
@@ -172,7 +168,6 @@ aside {
   align-items: center;
   gap: var(--sp-s);
   transition: background-color 300ms ease;
-  animation: cursor 1s linear infinite;
 }
 .sort_btn:hover,
 .filter_btn:hover,

@@ -26,9 +26,9 @@ export default class Model {
       student._FindFirstName(entry.fullname);
       student._FindLastName(entry.fullname);
       student._FindMiddleName(entry.fullname);
-      student._FindImageSrc();
       student._FindHouse(entry.house);
       student._FindGender(entry.gender);
+      student._FindImageSrc();
       this.students.push(student);
       // console.log(student);
     });

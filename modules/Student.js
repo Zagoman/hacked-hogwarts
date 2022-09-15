@@ -22,8 +22,8 @@ export default class Student {
         el = el[0].toUpperCase() + el.substring(1);
         fullNameArr[i] = el;
       });
-      let output = this._FindNickName(fullNameArr);
-      return output.join(" ");
+      this._FindNickName(fullNameArr);
+      return fullNameArr.join(" ");
     }
   }
 
