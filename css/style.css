@@ -164,6 +164,7 @@ aside {
   justify-content: center;
   align-items: flex-start;
   position: absolute;
+  width: 100%;
 }
 .sort_btn,
 .filter_btn,
@@ -257,7 +258,7 @@ input[type="radio"]:checked::after {
   /* appearance: none; */
   /* -webkit-appearance: none; */
 }
-@media only screen and (min-width: 684px) {
+@media only screen and (min-width: 580px) {
   body {
     background-position-y: 50%;
     background-position-x: 100%;
