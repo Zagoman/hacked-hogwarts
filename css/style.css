@@ -114,7 +114,10 @@ li a {
   border-radius: var(--border-radius_general);
   /* border: 1px solid black; */
 }
-
+.portrait {
+  border-radius: 20px;
+  /* mix-blend-mode: ; */
+}
 .student h3 {
   font-family: var(--ff-secondary);
   font-size: var(--font-size_big-body);
