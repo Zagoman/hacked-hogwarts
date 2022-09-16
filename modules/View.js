@@ -7,6 +7,7 @@ export default class View {
       studentTemplate: null,
       popupParentNode: null,
       popupTemplate: null,
+      overlay: null,
     };
     this._Init();
   }
@@ -15,8 +16,9 @@ export default class View {
     console.log("view instanciated");
     this.HTML.studentsParentNode = document.querySelector("#students");
     this.HTML.studentTemplate = document.querySelector("#student_temp").content;
-    this.HTML.popupParentNode = document.querySelector("main");
+    this.HTML.popupParentNode = document.querySelector("#popup_parent");
     this.HTML.popupTemplate = document.querySelector("#popup_temp").content;
+    this.HTML.overlay = this.HTML.popupTemplate.querySelector(".overlay");
   }
 
   _ShowStudents(students, parentNode) {
@@ -51,6 +53,8 @@ export default class View {
   }
 
   _OpenPopUp(students, id) {
+    // console.log(this.HTML.overlay);
+
     console.log(students[id]);
     let clone = this.HTML.popupTemplate.cloneNode(true);
     clone.querySelector("h3[data-name-order = first]").textContent = students[id].firstName;
@@ -76,6 +80,12 @@ export default class View {
       clone.querySelector("p[data-name-order = nick_name]").style.display = "none";
     }
 
+    clone.querySelector(".overlay").addEventListener("click", (e) => {
+      if (e.target.classList.contains("overlay")) {
+        // this.HTML.popupParentNode.children;
+        this.HTML.popupParentNode.firstElementChild.remove();
+      }
+    });
     this.HTML.popupParentNode.append(clone);
   }
 
