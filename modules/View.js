@@ -44,6 +44,13 @@ export default class View {
   _HandleOptionsPopup() {
     if (this.parentNode.dataset.popup === "closed") {
       this.parentNode.dataset.popup = "open";
+      let otherElements = document.querySelector("#options").children;
+      // console.log(this.parentNode === otherElements);
+      for (let i = 0; i < otherElements.length; i++) {
+        if (otherElements[i] !== this.parentNode) {
+          otherElements[i].dataset.popup = "closed";
+        }
+      }
     } else {
       this.parentNode.dataset.popup = "closed";
     }
