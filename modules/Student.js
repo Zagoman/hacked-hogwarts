@@ -1,7 +1,8 @@
 "use strict";
 
 export default class Student {
-  constructor() {
+  constructor(id) {
+    this.id = id;
     this.firstName = null;
     this.middleName = null;
     this.lastName = null;

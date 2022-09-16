@@ -23,8 +23,8 @@ export default class Model {
   }
 
   _PopulateStudents(data) {
-    data.forEach((entry) => {
-      let student = new Student();
+    data.forEach((entry, i) => {
+      let student = new Student(i);
       student._FindFirstName(entry.fullname);
       student._FindLastName(entry.fullname);
       student._FindMiddleName(entry.fullname);

@@ -9,7 +9,7 @@ export default class Controller {
 
   _Init() {
     console.log("Controller instanciated");
-    this.view._ShowStudents(this.model.students, this.view.HTML.studentsParentNode, this.view.HTML.studentTemplate);
+    this.view._ShowStudents(this.model.students, this.view.HTML.studentsParentNode);
     this._InitiateEventListeners();
   }
 
@@ -20,5 +20,10 @@ export default class Controller {
   _InitiateEventListeners() {
     document.querySelector(".sort_trigger").addEventListener("click", this.view._HandleOptionsPopup);
     document.querySelector(".filter_trigger").addEventListener("click", this.view._HandleOptionsPopup);
+    document.querySelectorAll("article .btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+      });
+    });
   }
 }

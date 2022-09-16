@@ -257,10 +257,21 @@ input[type="radio"]:checked::after {
   border: none;
   height: 100%;
   padding-inline: var(--sp-s);
-
-  /* appearance: none; */
-  /* -webkit-appearance: none; */
 }
+
+/* !Popup */
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.overlay article {
+  min-height: 80vh;
+}
+/* !end of popup */
 @media only screen and (min-width: 580px) {
   body {
     background-position-y: 50%;
