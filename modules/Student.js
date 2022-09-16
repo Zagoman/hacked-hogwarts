@@ -49,6 +49,11 @@ export default class Student {
     if (cleanedName.includes(" ")) {
       this.lastName = cleanedName.substring(cleanedName.lastIndexOf(" ") + 1);
     }
+    if (this.lastName && this.lastName.includes("-")) {
+      this.middleName = this.lastName.substring(0, this.lastName.indexOf("-"));
+      this.lastName = this.lastName.substring(this.lastName.indexOf("-") + 1);
+      this.lastName = this.lastName[0].toUpperCase() + this.lastName.substring(1);
+    }
   }
 
   _FindNickName(cleanedNameArr) {
@@ -62,8 +67,19 @@ export default class Student {
     return cleanedNameArr;
   }
 
-  _FindImageSrc() {
-    this.imageSrc;
+  _FindImageSrc(students) {
+    let lastNameCount = 0;
+    students.forEach((stud) => {
+      if (stud.lastName === this.lastName && stud !== this) {
+        lastNameCount++;
+      }
+    });
+    if (lastNameCount > 0) {
+      this.imageSrc = `./images/${this.lastName.toLowerCase()}_${this.firstName.toLowerCase()}.png`;
+    }
+    if (lastNameCount < 1 && this.lastName) {
+      this.imageSrc = `./images/${this.lastName.toLowerCase()}_${this.firstName[0].toLowerCase()}.png`;
+    }
   }
 
   _FindHouse(house) {

@@ -17,10 +17,12 @@ export default class Model {
     const jsonData = await res.json();
 
     await this._PopulateStudents(jsonData);
+    await this.students.forEach((stud) => {
+      stud._FindImageSrc(this.students);
+    });
   }
 
   _PopulateStudents(data) {
-    // console.table(data);
     data.forEach((entry) => {
       let student = new Student();
       student._FindFirstName(entry.fullname);
@@ -28,9 +30,7 @@ export default class Model {
       student._FindMiddleName(entry.fullname);
       student._FindHouse(entry.house);
       student._FindGender(entry.gender);
-      student._FindImageSrc();
       this.students.push(student);
-      // console.log(student);
     });
   }
 }
