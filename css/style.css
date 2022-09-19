@@ -218,7 +218,6 @@ li a {
 .filter_btn:hover,
 .info_btn:hover {
   background-color: var(--color-100);
-  cursor: pointer;
 }
 .sort_btn[data-popup="open"],
 .filter_btn[data-popup="open"],
@@ -254,6 +253,7 @@ li a {
   display: flex;
   align-items: center;
   gap: var(--sp-s);
+  cursor: pointer;
 }
 input[type="radio"] {
   display: block;
