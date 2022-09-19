@@ -53,8 +53,6 @@ export default class View {
   }
 
   _OpenPopUp(students, id) {
-    // console.log(this.HTML.overlay);
-
     console.log(students[id]);
     let clone = this.HTML.popupTemplate.cloneNode(true);
     clone.querySelector("h3[data-name-order = first]").textContent = students[id].firstName;

@@ -73,14 +73,14 @@ export default class Model {
     } else if (this.settings.sortDir === "z-a") {
       multiplier = -1;
     }
-    const sortedStudents = this.studentsInDisplay.sort((a, b) => {
+    console.log(multiplier);
+    this.studentsInDisplay.sort((a, b) => {
       if (a[this.settings.sortBy] > b[this.settings.sortBy]) {
         return multiplier * 1;
+      } else {
+        return multiplier * -1;
       }
-      return multiplier * -1;
     });
-
-    this._UpdateVisibleStudents(sortedStudents);
   }
 
   _UpdateVisibleStudents(students) {

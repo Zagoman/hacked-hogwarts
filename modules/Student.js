@@ -3,6 +3,7 @@
 export default class Student {
   constructor(id) {
     this.id = id;
+    this.fullName = null;
     this.firstName = null;
     this.middleName = null;
     this.lastName = null;
@@ -27,7 +28,8 @@ export default class Student {
         fullNameArr[i] = el;
       });
       this._FindNickName(fullNameArr);
-      return fullNameArr.join(" ");
+      this.fullName = fullNameArr.join(" ");
+      return this.fullName;
     }
   }
 
