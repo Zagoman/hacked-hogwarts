@@ -10,6 +10,8 @@ export default class Controller {
   _Init() {
     console.log("Controller instanciated");
     this.view._ShowStudents(this.model.students, this.view.HTML.studentsParentNode);
+    this.model.students.forEach((student) => this.model.studentsInDisplay.push(student));
+    console.log(this.model.students, this.model.studentsInDisplay);
     this._InitiateEventListeners();
   }
 

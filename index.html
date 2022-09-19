@@ -66,23 +66,23 @@
             </div>
             <form>
               <div class="sort_dir">
-                <input type="radio" id="sort_a-z" checked name="sort-op_dir" value="none" />
+                <input type="radio" id="sort_a-z" checked name="sort-op_dir" data-sort-dir="a-z" />
 
                 <label for="sort_a-z">a-z</label>
-                <input type="radio" id="sort_z-a" name="sort-op_dir" value="none" />
+                <input type="radio" id="sort_z-a" name="sort-op_dir" data-sort-dir="z-a" />
 
                 <label for="sort_z-a">z-a</label>
               </div>
               <div>
-                <input type="radio" checked id="sort_first-name" name="sort_option" value="first_name" />
+                <input type="radio" checked id="sort_first-name" name="sort_option" data-sort-value="firstName" />
                 <label for="sort_first-name">First name</label>
               </div>
               <div>
-                <input type="radio" id="sort_last-name" name="sort_option" value="last_name" />
+                <input type="radio" id="sort_last-name" name="sort_option" data-sort-value="lastName" />
                 <label for="sort_last-name">Last name</label>
               </div>
               <div>
-                <input type="radio" id="sort_house" name="sort_option" value="house" />
+                <input type="radio" id="sort_house" name="sort_option" data-sort-value="house" />
                 <label for="sort_house">House</label>
               </div>
             </form>
@@ -100,24 +100,24 @@
             </div>
             <form>
               <div>
-                <input type="radio" id="filter_none" name="filter_opt" checked value="none" />
+                <input type="radio" id="filter_none" name="filter_opt" checked data-filter-value="none" />
 
                 <label for="filter_none">None</label>
               </div>
               <div>
-                <input type="radio" id="filter_house" name="filter_opt" value="house" />
+                <input type="radio" id="filter_house" name="filter_opt" data-filter-value="house" />
                 <label for="filter_house">House</label>
               </div>
               <div>
-                <input type="radio" id="filter_prefects" name="filter_opt" value="prefects" />
+                <input type="radio" id="filter_prefects" name="filter_opt" data-filter-value="prefects" />
                 <label for="filter_prefects">Prefects</label>
               </div>
               <div>
-                <input type="radio" id="filter_inquisition" name="filter_opt" value="inquisition_squad" />
+                <input type="radio" id="filter_inquisition" name="filter_opt" data-filter-value="inquisition" />
                 <label for="filter_inquisition">Inquisition Squad</label>
               </div>
               <div>
-                <input type="radio" id="filter_expelled" name="filter_opt" value="expelled_students" />
+                <input type="radio" id="filter_expelled" name="filter_opt" data-filter-value="expelled" />
                 <label for="filter_expelled">Expelled Students</label>
               </div>
             </form>

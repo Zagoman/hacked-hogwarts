@@ -5,6 +5,13 @@ import Student from "./Student.js";
 export default class Model {
   constructor() {
     this.students = [];
+    this.expelledStudents = [];
+    this.studentsInDisplay = [];
+    this.settings = {
+      filterBy: null,
+      sortBy: "firstName",
+      sortDir: "a-z",
+    };
     this._Init();
   }
 
@@ -32,5 +39,51 @@ export default class Model {
       student._FindGender(entry.gender);
       this.students.push(student);
     });
+  }
+
+  _FilterStudents() {
+    const filteredStudents = this.studentsInDisplay.filter((student) => {
+      switch (this.settings.filterBy) {
+        case null:
+        case "none":
+          return true;
+          break;
+        case "house":
+          break;
+        case "prefects":
+          if (student.isPrefect) return true;
+          break;
+        case "inquisition":
+          if (student.isInquisition) return true;
+          break;
+        case "expelled":
+          if (student.isExpelled) return true;
+          break;
+      }
+      return false;
+    });
+
+    this._UpdateVisibleStudents(filteredStudents);
+  }
+
+  _SortStudents() {
+    let multiplier;
+    if (this.settings.sortDir === "a-z") {
+      multiplier = 1;
+    } else if (this.settings.sortDir === "z-a") {
+      multiplier = -1;
+    }
+    const sortedStudents = this.studentsInDisplay.sort((a, b) => {
+      if (a[this.settings.sortBy] > b[this.settings.sortBy]) {
+        return multiplier * 1;
+      }
+      return multiplier * -1;
+    });
+
+    this._UpdateVisibleStudents(sortedStudents);
+  }
+
+  _UpdateVisibleStudents(students) {
+    this.studentsInDisplay = students;
   }
 }

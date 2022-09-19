@@ -21,7 +21,7 @@ export default class View {
     this.HTML.overlay = this.HTML.popupTemplate.querySelector(".overlay");
   }
 
-  _ShowStudents(students, parentNode) {
+  _ShowStudents(students) {
     // console.log(this);
     students.forEach((student) => {
       let clone = this.HTML.studentTemplate.cloneNode(true);

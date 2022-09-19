@@ -10,6 +10,9 @@ export default class Student {
     this.imageSrc = null;
     this.gender = null;
     this.house = null;
+    this.isInquisition = false;
+    this.isPrefect = false;
+    this.isExpelled = false;
   }
 
   _CleanInitialData(fullName = null) {
