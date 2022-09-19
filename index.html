@@ -19,6 +19,40 @@
       </nav>
     </header>
     <main>
+      <div class="info_btn" data-popup="closed">
+        <div class="info_trigger">
+          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_58_1510)">
+              <path
+                d="M12.5 24.3115C15.6826 24.3115 18.7348 23.0472 20.9853 20.7968C23.2357 18.5464 24.5 15.4941 24.5 12.3115C24.5 9.12893 23.2357 6.07668 20.9853 3.82624C18.7348 1.57581 15.6826 0.311523 12.5 0.311523C9.3174 0.311523 6.26516 1.57581 4.01472 3.82624C1.76428 6.07668 0.5 9.12893 0.5 12.3115C0.5 15.4941 1.76428 18.5464 4.01472 20.7968C6.26516 23.0472 9.3174 24.3115 12.5 24.3115V24.3115ZM13.895 10.1935L12.395 17.251C12.29 17.761 12.4385 18.0505 12.851 18.0505C13.142 18.0505 13.5815 17.9455 13.88 17.6815L13.748 18.3055C13.3175 18.8245 12.368 19.2025 11.5505 19.2025C10.496 19.2025 10.0475 18.5695 10.3385 17.224L11.4455 12.022C11.5415 11.5825 11.4545 11.4235 11.015 11.317L10.3385 11.1955L10.4615 10.624L13.8965 10.1935H13.895ZM12.5 8.56152C12.1022 8.56152 11.7206 8.40349 11.4393 8.12218C11.158 7.84088 11 7.45935 11 7.06152C11 6.6637 11.158 6.28217 11.4393 6.00086C11.7206 5.71956 12.1022 5.56152 12.5 5.56152C12.8978 5.56152 13.2794 5.71956 13.5607 6.00086C13.842 6.28217 14 6.6637 14 7.06152C14 7.45935 13.842 7.84088 13.5607 8.12218C13.2794 8.40349 12.8978 8.56152 12.5 8.56152V8.56152Z"
+                fill="#E4D3A0"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_58_1510">
+                <rect width="24" height="24" fill="white" transform="translate(0.5 0.311523)" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <span>Info</span>
+        </div>
+        <div class="info_content">
+          <article>
+            <h4>General:</h4>
+            <p>Total Students:</p>
+            <p>Students Displayed:</p>
+            <p>Expelled Students:</p>
+          </article>
+          <article>
+            <h4>Students in:</h4>
+            <p>Griffyndor:</p>
+            <p>Slytherin:</p>
+            <p>Hufflepuff:</p>
+            <p>Ravenclaw:</p>
+          </article>
+        </div>
+      </div>
       <div id="opt_relative">
         <aside id="options">
           <div class="sort_btn" data-popup="closed">
@@ -32,7 +66,7 @@
             </div>
             <form>
               <div class="sort_dir">
-                <input type="radio" id="sort_a-z" name="sort-op_dir" value="none" />
+                <input type="radio" id="sort_a-z" checked name="sort-op_dir" value="none" />
 
                 <label for="sort_a-z">a-z</label>
                 <input type="radio" id="sort_z-a" name="sort-op_dir" value="none" />
@@ -88,40 +122,6 @@
               </div>
             </form>
           </div>
-          <div class="info_btn" data-popup="closed">
-            <div class="info_trigger">
-              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_1510)">
-                  <path
-                    d="M12.5 24.3115C15.6826 24.3115 18.7348 23.0472 20.9853 20.7968C23.2357 18.5464 24.5 15.4941 24.5 12.3115C24.5 9.12893 23.2357 6.07668 20.9853 3.82624C18.7348 1.57581 15.6826 0.311523 12.5 0.311523C9.3174 0.311523 6.26516 1.57581 4.01472 3.82624C1.76428 6.07668 0.5 9.12893 0.5 12.3115C0.5 15.4941 1.76428 18.5464 4.01472 20.7968C6.26516 23.0472 9.3174 24.3115 12.5 24.3115V24.3115ZM13.895 10.1935L12.395 17.251C12.29 17.761 12.4385 18.0505 12.851 18.0505C13.142 18.0505 13.5815 17.9455 13.88 17.6815L13.748 18.3055C13.3175 18.8245 12.368 19.2025 11.5505 19.2025C10.496 19.2025 10.0475 18.5695 10.3385 17.224L11.4455 12.022C11.5415 11.5825 11.4545 11.4235 11.015 11.317L10.3385 11.1955L10.4615 10.624L13.8965 10.1935H13.895ZM12.5 8.56152C12.1022 8.56152 11.7206 8.40349 11.4393 8.12218C11.158 7.84088 11 7.45935 11 7.06152C11 6.6637 11.158 6.28217 11.4393 6.00086C11.7206 5.71956 12.1022 5.56152 12.5 5.56152C12.8978 5.56152 13.2794 5.71956 13.5607 6.00086C13.842 6.28217 14 6.6637 14 7.06152C14 7.45935 13.842 7.84088 13.5607 8.12218C13.2794 8.40349 12.8978 8.56152 12.5 8.56152V8.56152Z"
-                    fill="#E4D3A0"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_1510">
-                    <rect width="24" height="24" fill="white" transform="translate(0.5 0.311523)" />
-                  </clipPath>
-                </defs>
-              </svg>
-
-              <span>Info</span>
-            </div>
-            <div class="info_content">
-              <article>
-                <h4>General:</h4>
-                <p>Total Students:</p>
-                <p>Students Displayed:</p>
-                <p>Expelled Students:</p>
-              </article>
-              <article>
-                <h4>Students in:</h4>
-                <p>Griffyndor:</p>
-                <p>Slytherin:</p>
-                <p>Hufflepuff:</p>
-                <p>Ravenclaw:</p>
-              </article>
-            </div>
-          </div>
           <div class="search_btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="12" fill="#E4D3A0" />
@@ -176,13 +176,12 @@
     <footer></footer>
     <template id="popup_temp">
       <div class="overlay">
-        <article class="student grid_2-5">
-          <div>
-            <img src="images/default.png" alt="student" class="portrait" />
-            <span class="label" data-label="nick_name">Nickname: </span>
-            <p data-name-order="nick_name" class="name"></p>
-          </div>
-          <div>
+        <article class="student grid_3-2">
+          <div class="popup_content-left">
+            <div>
+              <img src="images/default.png" alt="student" class="portrait" />
+            </div>
+
             <div>
               <span class="label" data-label="first_name">First name:</span>
               <h3 data-name-order="first" class="name"></h3>
@@ -190,17 +189,22 @@
               <p data-name-order="middle" class="name"></p>
               <span class="label" data-label="last_name">Last name:</span>
               <p data-name-order="last" class="name"></p>
+              <span class="label" data-label="nick_name">Nickname: </span>
+              <p data-name-order="nick_name" class="name"></p>
             </div>
-            <div class="prefect-badge"></div>
-            <div class="inquisition-badge"></div>
-          </div>
-          <div>
             <div>
-              <span class="label" data-label="house">House:</span>
-              <p data-house="house" class="name"></p>
               <span class="label" data-label="blood-status">Blood-status:</span>
               <p data-blood="blood" class="name"></p>
+              <span class="label" data-label="house">House:</span>
+              <p data-house="house" class="name"></p>
             </div>
+
+            <div class="badges_container">
+              <div class="prefect-badge"></div>
+              <div class="inquisition-badge"></div>
+            </div>
+          </div>
+          <div id="actions">
             <a href="#" class="btn">Choose as Prefect</a>
             <a href="#" class="btn">Recruit to Inquisition Squad</a>
             <a href="#" class="btn">Expell Student</a>

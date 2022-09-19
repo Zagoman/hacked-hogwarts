@@ -109,6 +109,11 @@ li a {
   grid-template-columns: 3fr 1fr;
   gap: 1rem;
 }
+.grid_3-2 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+}
 #students_container.grid_3-1 {
   display: block;
 }
@@ -282,6 +287,10 @@ input[type="radio"]:checked::after {
   height: 100%;
   padding-inline: var(--sp-s);
 }
+.info_btn {
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+}
 
 /* !Popup */
 .overlay {
@@ -291,9 +300,27 @@ input[type="radio"]:checked::after {
   position: absolute;
   inset: 0 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
+  padding: 4rem 1rem;
 }
 .overlay article {
-  min-height: 80vh;
+  width: 100%;
+  max-width: 950px;
+}
+#actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+  /* grid-column: -2/-1; */
+}
+#actions .btn {
+  margin: 0;
+  align-self: stretch;
+}
+
+.popup_content-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-l);
 }
 /* !end of popup */
 @media only screen and (min-width: 580px) {
@@ -393,5 +420,24 @@ input[type="radio"]:checked::after {
   }
   .info_btn {
     display: none;
+  }
+  .overlay article {
+    width: 100%;
+    max-width: 950px;
+  }
+  #actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-s);
+    grid-column: -2/-1;
+  }
+  #actions .btn {
+    margin: 0;
+    align-self: stretch;
+  }
+
+  .popup_content-left {
+    display: flex;
+    gap: var(--sp-l);
   }
 }
