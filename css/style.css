@@ -31,6 +31,9 @@
   --sp-l: 2rem;
   --sp-xl: 4rem;
   --sp-xxl: 8rem;
+
+  /* max-height */
+  --max-height-view: 70vh;
 }
 * {
   margin: 0;
@@ -101,13 +104,24 @@ li a {
   grid-template-columns: 2fr 5fr;
   gap: 1rem;
 }
+.grid_3-1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+}
+#students_container.grid_3-1 {
+  display: block;
+}
+
+/* ! Students */
 #students {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   overflow: scroll;
-  max-height: 80vh;
+  max-height: var(--max-height-view);
 }
+
 .student {
   padding: var(--sp-s);
   background-image: radial-gradient(rgba(204, 189, 143, 0.9) 0%, rgba(228, 211, 160, 0.9) 100%);
@@ -156,11 +170,17 @@ li a {
   color: var(--color-900);
   border-radius: var(--border-radius_general);
 }
+#info {
+  display: none;
+}
+
+/* !end of students */
+
 #opt_relative {
   position: relative;
   min-height: 5.5rem;
 }
-aside {
+#opt_relative > aside {
   display: flex;
   gap: var(--sp-m);
   padding-block: var(--sp-m);
@@ -171,6 +191,7 @@ aside {
 }
 .sort_btn,
 .filter_btn,
+.info_btn,
 .search_btn {
   background-color: var(--color-400);
   color: var(--color-900);
@@ -190,12 +211,13 @@ aside {
 }
 .sort_btn:hover,
 .filter_btn:hover,
-.search_btn:hover {
+.info_btn:hover {
   background-color: var(--color-100);
   cursor: pointer;
 }
 .sort_btn[data-popup="open"],
-.filter_btn[data-popup="open"] {
+.filter_btn[data-popup="open"],
+.info_btn[data-popup="open"] {
   border-radius: 8px;
 }
 .sort_btn[data-popup="open"] form,
@@ -205,7 +227,8 @@ aside {
   overflow: hidden;
 }
 .sort_btn[data-popup="closed"] form,
-.filter_btn[data-popup="closed"] form {
+.filter_btn[data-popup="closed"] form,
+.info_btn[data-popup="closed"] .info_content {
   display: none;
   overflow: hidden;
   transition: all 300ms;
@@ -221,7 +244,8 @@ aside {
   padding-block: var(--sp-xxs);
 }
 .filter_trigger,
-.sort_trigger {
+.sort_trigger,
+.info_trigger {
   display: flex;
   align-items: center;
   gap: var(--sp-s);
@@ -293,7 +317,7 @@ input[type="radio"]:checked::after {
     gap: var(--sp-xs);
     align-items: end;
   }
-  aside {
+  #opt_relative > aside {
     justify-content: start;
   }
   .student > div:last-child {
@@ -330,5 +354,44 @@ input[type="radio"]:checked::after {
   }
   .search_btn input {
     min-width: 300px;
+  }
+  #students + aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-m);
+    grid-column: -2/-1;
+    grid-row: 1/5;
+    background-color: var(--color-400);
+    padding: var(--sp-s);
+    border-radius: var(--border-radius_general);
+    max-height: var(--max-height-view);
+    overflow: scroll;
+  }
+  #students + aside h3 {
+    color: var(--color-900);
+    font-size: var(--font-size_h3);
+  }
+  .info_title {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-xs);
+  }
+  #info article {
+    background-color: var(--color-100);
+    padding: var(--sp-s);
+    border-radius: var(--border-radius_general);
+    color: var(--color-900);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-s);
+  }
+  #info h4 {
+    font-size: var(--font-size_h4);
+  }
+  #students_container.grid_3-1 {
+    display: grid;
+  }
+  .info_btn {
+    display: none;
   }
 }
