@@ -17,6 +17,7 @@ class Hogwarts {
     //Initiate MVC pattern
     this.model = new Model();
     // Use async so nothing forward is executed before promise is fullfiled
+    await this.model._LoadBloodData("https://petlatkea.dk/2021/hogwarts/families.json");
     await this.model._loadJSON("https://petlatkea.dk/2021/hogwarts/students.json");
     this.view = new View();
     // send view and model to controller so it has direct access

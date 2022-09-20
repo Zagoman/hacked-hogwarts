@@ -22,7 +22,7 @@ export default class Info {
 
   _GetHouseInfo() {
     let houses = ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"];
-    this.model.studentsInDisplay.filter((stud) => {
+    this.model.students.filter((stud) => {
       for (let i = 0; i < houses.length; i++) {
         if (stud.house.toLowerCase() === houses[i]) {
           this.houseInfo[houses[i]]++;

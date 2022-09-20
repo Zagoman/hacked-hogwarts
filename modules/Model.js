@@ -13,12 +13,18 @@ export default class Model {
       sortBy: "firstName",
       sortDir: "a-z",
     };
+    this.bloodData = null;
     this._Init();
   }
 
   _Init() {
     console.log("model instanciated");
     this.info = new Info(this);
+  }
+
+  async _LoadBloodData(url) {
+    const res = await fetch(url);
+    this.bloodData = await res.json();
   }
 
   async _loadJSON(url) {
