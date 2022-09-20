@@ -45,6 +45,7 @@ export default class Model {
       student._FindMiddleName(entry.fullname);
       student._FindHouse(entry.house);
       student._FindGender(entry.gender);
+      student._FindBloodStatus(this.bloodData);
       this.students.push(student);
     });
   }
@@ -100,7 +101,6 @@ export default class Model {
     this.studentsInDisplay = students;
     this.info._ResetInfo();
     this._UpdateInfo();
-    console.log(this.info);
   }
 
   _UpdateInfo() {

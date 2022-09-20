@@ -11,6 +11,7 @@ export default class Student {
     this.imageSrc = null;
     this.gender = null;
     this.house = null;
+    this.bloodStatus = null;
     this.isInquisition = false;
     this.isPrefect = false;
     this.isExpelled = false;
@@ -96,5 +97,22 @@ export default class Student {
   _FindGender(gender) {
     this.gender = gender.trim();
     this.gender = this.gender[0].toUpperCase() + this.gender.substring(1);
+  }
+
+  _FindBloodStatus(data) {
+    // console.log(data.pure);
+    if (this.lastName) {
+      if (data.half.includes(this.lastName) && data.pure.includes(this.lastName)) {
+        this.bloodStatus = "Half-blood";
+      } else if (!data.half.includes(this.lastName) && data.pure.includes(this.lastName)) {
+        this.bloodStatus = "Pure-blood";
+      } else if (data.half.includes(this.lastName) && !data.pure.includes(this.lastName)) {
+        this.bloodStatus = "Half-muggle";
+      } else if (!data.half.includes(this.lastName) && !data.pure.includes(this.lastName)) {
+        this.bloodStatus = "Muggle-blood";
+      }
+    } else {
+      this.bloodStatus = "Muggle-blood";
+    }
   }
 }
