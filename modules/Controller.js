@@ -43,9 +43,7 @@ export default class Controller {
     });
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
       el.addEventListener("change", () => {
-        console.log("change");
         this.model.settings.filterBy = el.value;
-        console.log(el.value, this.model.settings.filterBy);
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
       });
