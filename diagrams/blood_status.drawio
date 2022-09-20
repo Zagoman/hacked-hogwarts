@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="LOGTFjPnKAOBGnCsJvbx" name="Page-1">
-        <mxGraphModel dx="544" dy="367" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1244" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -11,7 +11,7 @@
                     <mxGeometry x="395" y="70" width="30" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="" style="line;strokeWidth=1;direction=south;html=1;dashed=1;dashPattern=20 20;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
-                    <mxGeometry x="240" y="40" width="10" height="480" as="geometry"/>
+                    <mxGeometry x="240" y="40" width="10" height="430" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="Model" style="text;align=center;fontSize=16;fontStyle=1;spacing=-1;" vertex="1" parent="1">
                     <mxGeometry x="80" y="20" width="60" height="20" as="geometry"/>
@@ -20,10 +20,10 @@
                     <mxGeometry x="350" y="20" width="60" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="line;strokeWidth=1;direction=south;html=1;dashed=1;dashPattern=20 20;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
-                    <mxGeometry x="520" y="40" width="10" height="460" as="geometry"/>
+                    <mxGeometry x="520" y="40" width="10" height="330" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="&lt;font style=&quot;font-size: 11px&quot;&gt;init&lt;/font&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="340" y="230" width="140" height="40" as="geometry"/>
+                    <mxGeometry x="340" y="180" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;" edge="1" parent="1" source="94" target="20">
                     <mxGeometry relative="1" as="geometry"/>
@@ -34,14 +34,14 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="14" value="&lt;font style=&quot;font-size: 11px&quot;&gt;LoadBloodData&lt;/font&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="280" width="140" height="40" as="geometry"/>
+                    <mxGeometry x="30" y="230" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="1" source="12" target="14">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="880" y="230.0000000000001" as="sourcePoint"/>
-                        <mxPoint x="100" y="300" as="targetPoint"/>
+                        <mxPoint x="880" y="180.0000000000001" as="sourcePoint"/>
+                        <mxPoint x="100" y="250" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="100" y="250"/>
+                            <mxPoint x="100" y="200"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -54,10 +54,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="20" value="&lt;font style=&quot;font-size: 11px&quot;&gt;populateStudents&lt;/font&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="370" width="140" height="40" as="geometry"/>
+                    <mxGeometry x="30" y="320" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="DOMContentLoaded" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;flipH=1;fillColor=#FFFFFF;fontColor=#050505;" vertex="1" parent="1">
-                    <mxGeometry x="320" y="140" width="180" height="40" as="geometry"/>
+                    <mxGeometry x="320" y="120" width="180" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="37" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=90;entryDy=0;fontSize=16;endArrow=none;entryPerimeter=0;" edge="1" parent="1" source="3" target="36">
                     <mxGeometry relative="1" as="geometry">
@@ -66,34 +66,192 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="92" value="&lt;font style=&quot;font-size: 11px&quot;&gt;findBloodStatus&lt;/font&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;fontSize=16;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="460" width="140" height="40" as="geometry"/>
+                    <mxGeometry x="30" y="410" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="" style="fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="95" y="320" width="10" height="10" as="geometry"/>
+                    <mxGeometry x="95" y="270" width="10" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="14" target="94">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="100" y="320" as="sourcePoint"/>
-                        <mxPoint x="100" y="370" as="targetPoint"/>
+                        <mxPoint x="100" y="270" as="sourcePoint"/>
+                        <mxPoint x="100" y="320" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="98" value="" style="fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="95" y="410" width="10" height="10" as="geometry"/>
+                    <mxGeometry x="95" y="360" width="10" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;" edge="1" parent="1" source="20" target="98">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="100" y="410" as="sourcePoint"/>
-                        <mxPoint x="100" y="460" as="targetPoint"/>
+                        <mxPoint x="100" y="360" as="sourcePoint"/>
+                        <mxPoint x="100" y="410" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="101" value="" style="whiteSpace=wrap;html=1;dashed=1;fillColor=none;rounded=1;glass=0;allowArrows=0;connectable=0;recursiveResize=0;pointerEvents=0;" vertex="1" parent="1">
-                    <mxGeometry x="20" y="630" width="810" height="930" as="geometry"/>
+                    <mxGeometry x="280" y="380" width="560" height="690" as="geometry"/>
                 </mxCell>
                 <mxCell id="102" value="Find Blood Status" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
-                    <mxGeometry x="330" y="655" width="200" height="30" as="geometry"/>
+                    <mxGeometry x="460" y="400" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" style="edgeStyle=none;html=1;fontSize=24;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="103" target="111">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="545" y="630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="106" value="Has Last name" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="105">
+                    <mxGeometry x="-0.5267" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" style="edgeStyle=none;html=1;fontSize=12;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="103" target="109">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="465" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="108" value="No Last Name" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="107">
+                    <mxGeometry x="0.6182" relative="1" as="geometry">
+                        <mxPoint x="36" as="offset"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="103" value="" style="rhombus;rounded=0;glass=0;pointerEvents=0;fontSize=24;fillColor=default;" vertex="1" parent="1">
-                    <mxGeometry x="400" y="780" width="30" height="30" as="geometry"/>
+                    <mxGeometry x="530" y="450" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;rounded=0;glass=0;pointerEvents=0;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="450" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="Muggle Blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="480" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="111" target="114">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="544.7619047619048" y="640" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="545" y="655"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="117" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="115">
+                    <mxGeometry x="-0.4616" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="119" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="111" target="118">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="475" y="595"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="127" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="119">
+                    <mxGeometry x="0.3529" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="111" value="" style="rhombus;rounded=0;glass=0;pointerEvents=0;fontSize=12;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="580" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="Does the student have a last name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="455" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="Last name is in Half blood, and Pure blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="585" width="240" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="" style="shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;rounded=0;glass=0;pointerEvents=0;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="640" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="Half-blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="645" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="true" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="118" target="121">
+                    <mxGeometry x="-0.3684" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="475" y="775"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="125" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="118" target="124">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="415" y="695"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="126" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="125">
+                    <mxGeometry x="0.5213" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="118" value="" style="rhombus;rounded=0;glass=0;pointerEvents=0;fontSize=12;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="680" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="Last name is in Half blood, but not in Pure blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="685" width="270" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="" style="shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;rounded=0;glass=0;pointerEvents=0;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="505" y="760" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="Half Muggle" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="535" y="765" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="124" target="129">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="415" y="905"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="132" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="131">
+                    <mxGeometry x="-0.4914" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="134" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="124" target="133">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="345" y="825"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="135" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="134">
+                    <mxGeometry x="0.1337" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="124" value="" style="rhombus;rounded=0;glass=0;pointerEvents=0;fontSize=12;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="810" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="Last name is in Pure blood, but not in Half blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="815" width="270" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="" style="shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;rounded=0;glass=0;pointerEvents=0;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="890" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="Pure Blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="485" y="895" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="133" target="137">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="345" y="1025"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="140" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="139">
+                    <mxGeometry x="-0.6108" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="133" value="" style="rhombus;rounded=0;glass=0;pointerEvents=0;fontSize=12;fillColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="930" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="Last name is neither in Pure blood, nor in Half blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="935" width="290" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="" style="shape=mxgraph.uml25.inputPin;html=1;points=[[0,0.5],[1,0.5]];strokeColor=#ffffff;fillColor=#000000;flipH=1;rounded=0;glass=0;pointerEvents=0;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="365" y="1010" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="Muggle Blood" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="1015" width="90" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

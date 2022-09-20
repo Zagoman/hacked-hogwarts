@@ -100,7 +100,6 @@ export default class Student {
   }
 
   _FindBloodStatus(data) {
-    // console.log(data.pure);
     if (this.lastName) {
       if (data.half.includes(this.lastName) && data.pure.includes(this.lastName)) {
         this.bloodStatus = "Half-blood";
