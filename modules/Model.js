@@ -46,27 +46,21 @@ export default class Model {
       switch (this.settings.filterBy) {
         case null:
         case "none":
-          console.log("none yo");
           return true;
           break;
         case "gryffindor":
         case "slytherin":
         case "hufflepuff":
         case "ravenclaw":
-          console.log("house");
-
           if (student.house.toLowerCase() === this.settings.filterBy) return true;
           break;
         case "prefects":
-          console.log("prefect yo");
           if (student.isPrefect) return true;
           break;
         case "inquisition":
-          console.log("inquisition yo");
           if (student.isInquisition) return true;
           break;
         case "expelled":
-          console.log("expelled yo");
           if (student.isExpelled) return true;
           break;
       }
