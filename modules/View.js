@@ -55,13 +55,13 @@ export default class View {
   }
 
   _OpenPopUp(students, id) {
-    console.log(students[id]);
     let clone = this.HTML.popupTemplate.cloneNode(true);
     clone.querySelector("h3[data-name-order = first]").textContent = students[id].firstName;
     clone.querySelector("p[data-name-order = middle]").textContent = students[id].middleName;
     clone.querySelector("p[data-name-order = last]").textContent = students[id].lastName;
     clone.querySelector("p[data-name-order = nick_name]").textContent = students[id].nickName;
     clone.querySelector("p[data-house = house]").textContent = students[id].house;
+    clone.querySelector("p[data-blood = blood]").textContent = students[id].bloodStatus;
     clone.querySelector(".btn").dataset.studId = students[id].id;
     if (students[id].imageSrc) {
       clone.querySelector("img").src = students[id].imageSrc;
