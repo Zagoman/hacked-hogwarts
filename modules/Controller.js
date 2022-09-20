@@ -64,10 +64,13 @@ export default class Controller {
       });
     });
     document.querySelector("input[name='search']").addEventListener("input", (e) => {
-      if (e.target.value) {
-        this.model._SearchStudents(e.target.value);
-        this.view._ShowStudents(this.model.studentsInDisplay);
-      }
+      this.model._SearchStudents(e.target.value);
+      this.view._ShowStudents(this.model.studentsInDisplay);
+      document.querySelectorAll("article .btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+        });
+      });
     });
   }
 }
