@@ -32,6 +32,11 @@ export default class Controller {
         this.model.settings.sortDir = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        document.querySelectorAll("article .btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+          });
+        });
       });
     });
     document.querySelectorAll('input[name="sort_option"]').forEach((el) => {
@@ -39,6 +44,11 @@ export default class Controller {
         this.model.settings.sortBy = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        document.querySelectorAll("article .btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+          });
+        });
       });
     });
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
@@ -46,6 +56,11 @@ export default class Controller {
         this.model.settings.filterBy = el.value;
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        document.querySelectorAll("article .btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+          });
+        });
       });
     });
   }
