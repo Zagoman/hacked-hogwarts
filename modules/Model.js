@@ -73,7 +73,6 @@ export default class Model {
     } else if (this.settings.sortDir === "z-a") {
       multiplier = -1;
     }
-    console.log(multiplier);
     this.studentsInDisplay.sort((a, b) => {
       if (a[this.settings.sortBy] > b[this.settings.sortBy]) {
         return multiplier * 1;

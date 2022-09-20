@@ -22,6 +22,8 @@ export default class View {
   }
 
   _ShowStudents(students) {
+    // console.log(this.HTML.studentTemplate.innerHTML);
+    this.HTML.studentsParentNode.innerHTML = "";
     // console.log(this);
     students.forEach((student) => {
       let clone = this.HTML.studentTemplate.cloneNode(true);

@@ -27,5 +27,19 @@ export default class Controller {
         this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
       });
     });
+    document.querySelectorAll('input[name="sort-op_dir"]').forEach((el) => {
+      el.addEventListener("change", () => {
+        this.model.settings.sortDir = el.value;
+        this.model._SortStudents();
+        this.view._ShowStudents(this.model.studentsInDisplay);
+      });
+    });
+    document.querySelectorAll('input[name="sort_option"]').forEach((el) => {
+      el.addEventListener("change", () => {
+        this.model.settings.sortBy = el.value;
+        this.model._SortStudents();
+        this.view._ShowStudents(this.model.studentsInDisplay);
+      });
+    });
   }
 }
