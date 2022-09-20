@@ -104,7 +104,7 @@ export default class View {
     }
   }
 
-  _UpdateUI() {
-    console.log("updateUI");
+  _ShowInfo() {
+    console.log("show info");
   }
 }

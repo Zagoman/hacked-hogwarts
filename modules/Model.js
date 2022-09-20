@@ -1,5 +1,6 @@
 "use strict";
 
+import Info from "./Info.js";
 import Student from "./Student.js";
 
 export default class Model {
@@ -17,6 +18,7 @@ export default class Model {
 
   _Init() {
     console.log("model instanciated");
+    this.info = new Info(this);
   }
 
   async _loadJSON(url) {
@@ -85,9 +87,18 @@ export default class Model {
         return multiplier * -1;
       }
     });
+    this._UpdateVisibleStudents(this.studentsInDisplay);
   }
 
   _UpdateVisibleStudents(students) {
     this.studentsInDisplay = students;
+    this.info._ResetInfo();
+    this._UpdateInfo();
+    console.log(this.info);
+  }
+
+  _UpdateInfo() {
+    this.info._GetGeneralInfo();
+    this.info._GetHouseInfo();
   }
 }
