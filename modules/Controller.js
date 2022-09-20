@@ -63,5 +63,11 @@ export default class Controller {
         });
       });
     });
+    document.querySelector("input[name='search']").addEventListener("input", (e) => {
+      if (e.target.value) {
+        this.model._SearchStudents(e.target.value);
+        this.view._ShowStudents(this.model.studentsInDisplay);
+      }
+    });
   }
 }

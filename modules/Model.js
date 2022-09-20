@@ -97,6 +97,23 @@ export default class Model {
     this._UpdateVisibleStudents(this.studentsInDisplay);
   }
 
+  _SearchStudents(input) {
+    console.log("hello");
+    let keys;
+    const output = this.students.filter((student) => {
+      keys = Object.keys(student);
+      for (let i = 0; i < keys.length; i++) {
+        if (student[keys[i]] && typeof student[keys[i]] === "string") {
+          if (student[keys[i]].toLowerCase().includes(input.toLowerCase())) {
+            return true;
+          }
+        }
+      }
+      return false;
+    });
+    this._UpdateVisibleStudents(output);
+  }
+
   _UpdateVisibleStudents(students) {
     this.studentsInDisplay = students;
     this.info._ResetInfo();
