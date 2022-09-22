@@ -90,6 +90,11 @@ export default class View {
         this.HTML.popupParentNode.firstElementChild.remove();
       }
     });
+    clone.querySelector("a[data-action='cancel']").addEventListener("click", (e) => {
+      // this.HTML.popupParentNode.children;
+      this.HTML.popupParentNode.firstElementChild.remove();
+    });
+
     this.HTML.popupParentNode.append(clone);
   }
 
