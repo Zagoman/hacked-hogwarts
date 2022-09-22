@@ -13,6 +13,7 @@ export default class Controller {
     this.model._SortStudents();
     this.view._ShowStudents(this.model.studentsInDisplay, this.view.HTML.studentsParentNode);
     this._InitiateEventListeners();
+    console.log(this.model.students);
   }
 
   _GetSortingOpt() {
