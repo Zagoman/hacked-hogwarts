@@ -51,30 +51,33 @@ export default class Model {
   }
 
   _FilterStudents() {
-    let filteredStudents = this.students.filter((student) => {
-      switch (this.settings.filterBy) {
-        case null:
-        case "none":
-          return true;
-          break;
-        case "gryffindor":
-        case "slytherin":
-        case "hufflepuff":
-        case "ravenclaw":
-          if (student.house.toLowerCase() === this.settings.filterBy) return true;
-          break;
-        case "prefects":
-          if (student.isPrefect) return true;
-          break;
-        case "inquisition":
-          if (student.isInquisition) return true;
-          break;
-        case "expelled":
-          if (student.isExpelled) return true;
-          break;
-      }
-      return false;
-    });
+    let filteredStudents;
+    if (this.settings.filterBy !== "expelled") {
+      filteredStudents = this.students.filter((student) => {
+        console.log(this.settings.filterBy);
+        switch (this.settings.filterBy.trim()) {
+          case null:
+          case "none":
+            return true;
+            break;
+          case "gryffindor":
+          case "slytherin":
+          case "hufflepuff":
+          case "ravenclaw":
+            if (student.house.toLowerCase() === this.settings.filterBy) return true;
+            break;
+          case "prefects":
+            if (student.isPrefect) return true;
+            break;
+          case "inquisition":
+            if (student.isInquisition) return true;
+            break;
+        }
+        return false;
+      });
+    } else {
+      filteredStudents = this.expelledStudents;
+    }
 
     this._UpdateVisibleStudents(filteredStudents);
     this._SortStudents();
@@ -123,5 +126,15 @@ export default class Model {
   _UpdateInfo() {
     this.info._GetGeneralInfo();
     this.info._GetHouseInfo();
+  }
+
+  _ExpellStudent(student) {
+    console.log(student);
+    student.isExpelled = true;
+    console.log(student);
+    this.students.splice(this.students.indexOf(student), 1);
+    this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
+    this.expelledStudents.push(student);
+    console.log(this.studentsInDisplay);
   }
 }

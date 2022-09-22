@@ -4,6 +4,7 @@ export default class Controller {
   constructor(model, view) {
     this.model = model;
     this.view = view;
+    this.observer = null;
     this._Init();
   }
 
@@ -13,6 +14,7 @@ export default class Controller {
     this.model._SortStudents();
     this.view._ShowStudents(this.model.studentsInDisplay, this.view.HTML.studentsParentNode);
     this._InitiateEventListeners();
+    this._ObservePopup();
     console.log(this.model.students);
   }
 
@@ -50,6 +52,7 @@ export default class Controller {
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
       el.addEventListener("change", () => {
         this.model.settings.filterBy = el.value;
+        console.log(el.value);
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
         this._PopupEvent();
@@ -65,8 +68,36 @@ export default class Controller {
   _PopupEvent() {
     document.querySelectorAll("article .btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+        if (this.model.settings.filterBy !== "expelled") {
+          this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
+        } else {
+          this.view._OpenPopUp(this.model.expelledStudents, Number(btn.dataset.studId));
+        }
       });
     });
+  }
+
+  _ObservePopup() {
+    const targetNode = this.view.HTML.popupParentNode;
+    const config = { childList: true };
+
+    const callback = (mutationList, observer) => {
+      if (mutationList[0].addedNodes.length > 0) {
+        // console.log(mutationList);
+        targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
+          this.model._ExpellStudent(this.model.students[Number(this.model.students.findIndex(findStudent))]);
+          this.view.HTML.popupParentNode.firstElementChild.remove();
+          this.view._ShowStudents(this.model.studentsInDisplay);
+          this._PopupEvent();
+        });
+      }
+    };
+
+    function findStudent(student) {
+      return student.id == targetNode.dataset.studId;
+    }
+    this.observer = new MutationObserver(callback);
+
+    this.observer.observe(targetNode, config);
   }
 }

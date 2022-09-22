@@ -10,6 +10,7 @@ export default class View {
       overlay: null,
       filterTrigger: null,
       sortTrigger: null,
+      expellBtn: null,
     };
     this._Init();
   }
@@ -59,39 +60,52 @@ export default class View {
   }
 
   _OpenPopUp(students, id) {
+    let currentStudent;
+    students.forEach((stud) => {
+      if (Number(stud.id) === Number(id)) {
+        currentStudent = stud;
+      }
+    });
+    this.HTML.popupParentNode.dataset.studId = id;
     let clone = this.HTML.popupTemplate.cloneNode(true);
-    clone.querySelector("h3[data-name-order = first]").textContent = students[id].firstName;
-    clone.querySelector("p[data-name-order = middle]").textContent = students[id].middleName;
-    clone.querySelector("p[data-name-order = last]").textContent = students[id].lastName;
-    clone.querySelector("p[data-name-order = nick_name]").textContent = students[id].nickName;
-    clone.querySelector("p[data-house = house]").textContent = students[id].house;
-    clone.querySelector("p[data-blood = blood]").textContent = students[id].bloodStatus;
-    clone.querySelector(".btn").dataset.studId = students[id].id;
-    if (students[id].imageSrc) {
-      clone.querySelector("img").src = students[id].imageSrc;
+    clone.querySelector("h3[data-name-order = first]").textContent = currentStudent.firstName;
+    clone.querySelector("p[data-name-order = middle]").textContent = currentStudent.middleName;
+    clone.querySelector("p[data-name-order = last]").textContent = currentStudent.lastName;
+    clone.querySelector("p[data-name-order = nick_name]").textContent = currentStudent.nickName;
+    clone.querySelector("p[data-house = house]").textContent = currentStudent.house;
+    clone.querySelector("p[data-blood = blood]").textContent = currentStudent.bloodStatus;
+    clone.querySelector(".btn").dataset.studId = currentStudent.id;
+    if (currentStudent.imageSrc) {
+      clone.querySelector("img").src = currentStudent.imageSrc;
     }
 
-    if (!students[id].middleName) {
+    if (!currentStudent.middleName) {
       clone.querySelector("span[data-label = middle_name]").style.display = "none";
       clone.querySelector("p[data-name-order = middle]").style.display = "none";
     }
-    if (!students[id].lastName) {
+    if (!currentStudent.lastName) {
       clone.querySelector("span[data-label = last_name]").style.display = "none";
       clone.querySelector("p[data-name-order = last]").style.display = "none";
     }
-    if (!students[id].nickName) {
+    if (!currentStudent.nickName) {
       clone.querySelector("span[data-label = nick_name]").style.display = "none";
       clone.querySelector("p[data-name-order = nick_name]").style.display = "none";
     }
-    console.log(students[id].house.toLowerCase());
-    clone.querySelector("article").style.backgroundImage = `url(images/graphics/${students[id].house}_bg.webp)`;
+    if (currentStudent.isExpelled) {
+      clone.querySelector("a[data-action='expell']").remove();
+      clone.querySelector("a[data-action='squad']").remove();
+      clone.querySelector("a[data-action='prefect']").remove();
+    }
+    clone.querySelector("article").style.backgroundImage = `url(images/graphics/${currentStudent.house}_bg.webp)`;
 
+    //Clone's Event Listeners
     clone.querySelector(".overlay").addEventListener("click", (e) => {
       if (e.target.classList.contains("overlay")) {
         // this.HTML.popupParentNode.children;
         this.HTML.popupParentNode.firstElementChild.remove();
       }
     });
+
     clone.querySelector("a[data-action='cancel']").addEventListener("click", (e) => {
       // this.HTML.popupParentNode.children;
       this.HTML.popupParentNode.firstElementChild.remove();
