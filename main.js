@@ -22,7 +22,7 @@ class Hogwarts {
     this.view = new View();
     // send view and model to controller so it has direct access
     this.controller = new Controller(this.model, this.view);
-    console.log(this.model.studentsInDisplay);
+    // console.log(this.model.studentsInDisplay);
   }
 }
 

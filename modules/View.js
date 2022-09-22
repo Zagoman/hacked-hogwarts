@@ -11,6 +11,8 @@ export default class View {
       filterTrigger: null,
       sortTrigger: null,
       expellBtn: null,
+      prefectBtn: null,
+      squadBtn: null,
     };
     this._Init();
   }
@@ -77,6 +79,14 @@ export default class View {
     clone.querySelector(".btn").dataset.studId = currentStudent.id;
     if (currentStudent.imageSrc) {
       clone.querySelector("img").src = currentStudent.imageSrc;
+    }
+
+    if (currentStudent.isPrefect && !currentStudent.isExpelled) {
+      clone.querySelector("a[data-action='prefect']").textContent = "Revoke prefect status";
+    }
+
+    if (currentStudent.isSquad && !currentStudent.isExpelled) {
+      clone.querySelector("a[data-action='squad']").textContent = "Kick out from Squad";
     }
 
     if (!currentStudent.middleName) {

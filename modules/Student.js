@@ -12,9 +12,13 @@ export default class Student {
     this.gender = null;
     this.house = null;
     this.bloodStatus = null;
-    this.isInquisition = false;
+    this.isSquad = false;
     this.isPrefect = false;
     this.isExpelled = false;
+    this.clickCounter = {
+      prefect: 0,
+      squad: 0,
+    };
   }
 
   _CleanInitialData(fullName = null) {

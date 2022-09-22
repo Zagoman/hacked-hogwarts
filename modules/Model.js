@@ -9,7 +9,7 @@ export default class Model {
     this.expelledStudents = [];
     this.studentsInDisplay = [];
     this.settings = {
-      filterBy: null,
+      filterBy: "none",
       sortBy: "firstName",
       sortDir: "a-z",
     };
@@ -54,7 +54,6 @@ export default class Model {
     let filteredStudents;
     if (this.settings.filterBy !== "expelled") {
       filteredStudents = this.students.filter((student) => {
-        console.log(this.settings.filterBy);
         switch (this.settings.filterBy.trim()) {
           case null:
           case "none":
@@ -70,7 +69,7 @@ export default class Model {
             if (student.isPrefect) return true;
             break;
           case "inquisition":
-            if (student.isInquisition) return true;
+            if (student.isSquad) return true;
             break;
         }
         return false;
@@ -136,5 +135,61 @@ export default class Model {
     this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
     this.expelledStudents.push(student);
     console.log(this.studentsInDisplay);
+  }
+
+  _MakePrefect(student) {
+    // console.log("current student", student);
+
+    const MAX_PER_HOUSE = 2;
+    const MAX_PER_GENDER = 1;
+    const counter = {
+      prefects: 0,
+      boy: 0,
+      girl: 0,
+    };
+
+    student.clickCounter.prefect++;
+
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].house === student.house) {
+        if (this.students[i].isPrefect) {
+          counter.prefects++;
+          counter[this.students[i].gender.toLowerCase()]++;
+        }
+      }
+    }
+
+    if (student.clickCounter.prefect % 2 !== 0) {
+      if (counter.prefects < MAX_PER_HOUSE) {
+        if (counter[student.gender.toLowerCase()] < MAX_PER_GENDER) {
+          student.isPrefect = true;
+        } else {
+          alert(`There can only be ${MAX_PER_GENDER} ${student.gender.toLowerCase()} as a prefect in ${student.house}`);
+        }
+      } else {
+        alert(`There can only be ${MAX_PER_HOUSE} prefects in ${student.house}`);
+      }
+    } else {
+      student.isPrefect = false;
+      console.log(student);
+    }
+  }
+
+  _RecruitToSquad(student) {
+    const HOUSE = "slytherin";
+    const ACCEPTED_BLOOD_TYPE = "pure_blood";
+
+    student.clickCounter.squad++;
+
+    if (student.clickCounter.squad % 2 !== 0) {
+      if (student.house.toLowerCase() === HOUSE || student.bloodStatus.toLowerCase() === ACCEPTED_BLOOD_TYPE) {
+        student.isSquad = true;
+      } else {
+        alert(`To be part of the Inquisitory Squad you must be from ${HOUSE} or be a ${ACCEPTED_BLOOD_TYPE}`);
+      }
+    } else {
+      student.isSquad = false;
+      console.log(student);
+    }
   }
 }

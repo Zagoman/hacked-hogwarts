@@ -15,7 +15,7 @@ export default class Controller {
     this.view._ShowStudents(this.model.studentsInDisplay, this.view.HTML.studentsParentNode);
     this._InitiateEventListeners();
     this._ObservePopup();
-    console.log(this.model.students);
+    // console.log(this.model.students);
   }
 
   _GetSortingOpt() {
@@ -52,7 +52,7 @@ export default class Controller {
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
       el.addEventListener("change", () => {
         this.model.settings.filterBy = el.value;
-        console.log(el.value);
+        // console.log(el.value);
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
         this._PopupEvent();
@@ -83,10 +83,31 @@ export default class Controller {
 
     const callback = (mutationList, observer) => {
       if (mutationList[0].addedNodes.length > 0) {
-        // console.log(mutationList);
+        let currentStudent = this.model.students[Number(this.model.students.findIndex(findStudent))];
+        // !Event Listeners when popup is open
+
+        // Expell btn event listener
         targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
-          this.model._ExpellStudent(this.model.students[Number(this.model.students.findIndex(findStudent))]);
+          this.model._ExpellStudent(currentStudent);
           this.view.HTML.popupParentNode.firstElementChild.remove();
+          this.view._ShowStudents(this.model.studentsInDisplay);
+          this._PopupEvent();
+        });
+
+        // Prefect btn event listener
+        targetNode.querySelector("a[data-action='prefect']").addEventListener("click", (e) => {
+          this.model._MakePrefect(currentStudent);
+          this.view.HTML.popupParentNode.firstElementChild.remove();
+          this.model._FilterStudents();
+          this.view._ShowStudents(this.model.studentsInDisplay);
+          this._PopupEvent();
+        });
+
+        // Squad btn event listener
+        targetNode.querySelector("a[data-action='squad']").addEventListener("click", (e) => {
+          this.model._RecruitToSquad(currentStudent);
+          this.view.HTML.popupParentNode.firstElementChild.remove();
+          this.model._FilterStudents();
           this.view._ShowStudents(this.model.studentsInDisplay);
           this._PopupEvent();
         });
