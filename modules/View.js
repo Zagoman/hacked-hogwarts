@@ -8,6 +8,8 @@ export default class View {
       popupParentNode: null,
       popupTemplate: null,
       overlay: null,
+      filterTrigger: null,
+      sortTrigger: null,
     };
     this._Init();
   }
@@ -19,6 +21,8 @@ export default class View {
     this.HTML.popupParentNode = document.querySelector("#popup_parent");
     this.HTML.popupTemplate = document.querySelector("#popup_temp").content;
     this.HTML.overlay = this.HTML.popupTemplate.querySelector(".overlay");
+    this.HTML.filterTrigger = document.querySelector(".filter_trigger");
+    this.HTML.sortTrigger = document.querySelector(".sort_trigger");
   }
 
   _ShowStudents(students) {
@@ -102,6 +106,11 @@ export default class View {
     } else {
       this.parentNode.dataset.popup = "closed";
     }
+  }
+
+  _CloseOptions() {
+    this.HTML.filterTrigger.parentElement.dataset.popup = "closed";
+    this.HTML.sortTrigger.parentElement.dataset.popup = "closed";
   }
 
   _ShowInfo() {

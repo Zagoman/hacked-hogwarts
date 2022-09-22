@@ -305,6 +305,9 @@ input[type="radio"]:checked::after {
 .overlay article {
   width: 100%;
   max-width: 950px;
+  background-image: url("../images/graphics/ravenclaw.webp");
+  background-position: 50% 50%;
+  background-size: cover;
 }
 #actions {
   display: flex;
@@ -321,7 +324,42 @@ input[type="radio"]:checked::after {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-l);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  color: var(--color-900);
+  grid-column: 1/-1;
+  border-radius: var(--border-radius_general);
 }
+a[data-action="prefect"],
+a[data-action="squad"] {
+  /* border: 10px solid black; */
+  background-color: var(--color-800);
+  color: var(--color-100);
+  background-image: none;
+  transition: background-color 300ms ease;
+}
+a[data-action="prefect"]:hover,
+a[data-action="squad"]:hover {
+  /* border: 10px solid black; */
+  background-color: var(--color-900);
+}
+a[data-action="expell"] {
+  background-color: var(--color-400);
+  background-image: none;
+  transition: background-color 300ms ease;
+}
+a[data-action="expell"]:hover {
+  background-color: var(--color-700);
+}
+a[data-action="cancel"] {
+  background-color: var(--color-100);
+  background-image: none;
+  transition: background-color 300ms ease;
+}
+a[data-action="cancel"]:hover {
+  background-color: var(--color-200);
+}
+
 /* !end of popup */
 @media only screen and (min-width: 580px) {
   body {
@@ -439,5 +477,6 @@ input[type="radio"]:checked::after {
   .popup_content-left {
     display: flex;
     gap: var(--sp-l);
+    grid-column: 1/2;
   }
 }

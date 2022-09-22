@@ -21,23 +21,22 @@ export default class Controller {
   }
 
   _InitiateEventListeners() {
-    document.querySelector(".sort_trigger").addEventListener("click", this.view._HandleOptionsPopup);
-    document.querySelector(".filter_trigger").addEventListener("click", this.view._HandleOptionsPopup);
-    document.querySelectorAll("article .btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
-      });
+    this.view.HTML.sortTrigger.addEventListener("click", this.view._HandleOptionsPopup);
+    this.view.HTML.filterTrigger.addEventListener("click", this.view._HandleOptionsPopup);
+    window.addEventListener("click", (e) => {
+      if (this.view.HTML.sortTrigger.parentElement.dataset.popup === "open" || this.view.HTML.filterTrigger.parentElement.dataset.popup === "open") {
+        if (!this.view.HTML.filterTrigger.parentElement.contains(e.target) && !this.view.HTML.sortTrigger.parentElement.contains(e.target)) {
+          this.view._CloseOptions();
+        }
+      }
     });
+    this._PopupEvent();
     document.querySelectorAll('input[name="sort-op_dir"]').forEach((el) => {
       el.addEventListener("change", () => {
         this.model.settings.sortDir = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
-        document.querySelectorAll("article .btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
-          });
-        });
+        this._PopupEvent();
       });
     });
     document.querySelectorAll('input[name="sort_option"]').forEach((el) => {
@@ -45,11 +44,7 @@ export default class Controller {
         this.model.settings.sortBy = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
-        document.querySelectorAll("article .btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
-          });
-        });
+        this._PopupEvent();
       });
     });
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
@@ -57,20 +52,20 @@ export default class Controller {
         this.model.settings.filterBy = el.value;
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
-        document.querySelectorAll("article .btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
-          });
-        });
+        this._PopupEvent();
       });
     });
     document.querySelector("input[name='search']").addEventListener("input", (e) => {
       this.model._SearchStudents(e.target.value);
       this.view._ShowStudents(this.model.studentsInDisplay);
-      document.querySelectorAll("article .btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
-        });
+      this._PopupEvent();
+    });
+  }
+
+  _PopupEvent() {
+    document.querySelectorAll("article .btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        this.view._OpenPopUp(this.model.students, Number(btn.dataset.studId));
       });
     });
   }
