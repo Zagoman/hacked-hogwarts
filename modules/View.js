@@ -83,6 +83,8 @@ export default class View {
       clone.querySelector("span[data-label = nick_name]").style.display = "none";
       clone.querySelector("p[data-name-order = nick_name]").style.display = "none";
     }
+    console.log(students[id].house.toLowerCase());
+    clone.querySelector("article").style.backgroundImage = `url(images/graphics/${students[id].house}_bg.webp)`;
 
     clone.querySelector(".overlay").addEventListener("click", (e) => {
       if (e.target.classList.contains("overlay")) {
