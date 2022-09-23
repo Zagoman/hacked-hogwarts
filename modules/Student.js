@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * Each student is going to be an instance of the Student class, which is going to inherit all the properties and methods.
+ * The methods in students are set so it modifies the students initial data to the specific data to that student.
+ */
 export default class Student {
   constructor(id) {
     this.id = id;
@@ -20,6 +24,10 @@ export default class Student {
       squad: 0,
     };
   }
+
+  /**
+   * The methods are self explanatory
+   */
 
   _CleanInitialData(fullName = null) {
     if (fullName) {

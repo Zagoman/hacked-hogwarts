@@ -1,3 +1,9 @@
+"use strict";
+
+/**
+ * This class holds the information that is going to be displayed in the info pannel.
+ * It should use it's methods to update itself everytime the data changes.
+ */
 export default class Info {
   constructor(model) {
     this.model = model;

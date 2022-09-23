@@ -1,25 +1,29 @@
 "use strict";
 
 export default class Controller {
+  //Receives Model and View so it can communicate with both, without having Model a and view communicating with each other
   constructor(model, view) {
     this.model = model;
     this.view = view;
-    this.observer = null;
-    this._Init();
+    this.observer = null; //This observer is going to be populated by a MutationObserver to check when the 'see more' popup is open
+    this._Init(); //calls Init function within controller
   }
 
   _Init() {
     console.log("Controller instanciated");
+
+    // Update studentsInDisplay array
     this.model.students.forEach((student) => this.model.studentsInDisplay.push(student));
+
+    // Sort students right away
     this.model._SortStudents();
+
+    // Show students in a list, by sending the students that should be displayer, and the parent node where they should be appended to
     this.view._ShowStudents(this.model.studentsInDisplay, this.view.HTML.studentsParentNode);
+
+    // Initiate Event handlers and start the Observer
     this._InitiateEventListeners();
     this._ObservePopup();
-    // console.log(this.model.students);
-  }
-
-  _GetSortingOpt() {
-    console.log("get sorting opt");
   }
 
   _InitiateEventListeners() {
@@ -81,6 +85,7 @@ export default class Controller {
     const targetNode = this.view.HTML.popupParentNode;
     const config = { childList: true };
 
+    // Set a callback to when a mutation on the popup parent node is observed
     const callback = (mutationList, observer) => {
       if (mutationList[0].addedNodes.length > 0) {
         let currentStudent = this.model.students[Number(this.model.students.findIndex(findStudent))];
@@ -114,11 +119,15 @@ export default class Controller {
       }
     };
 
+    // callback to find the right student's index
     function findStudent(student) {
       return student.id == targetNode.dataset.studId;
     }
+
+    // Instantiate Mutation Observer and set to Controllers object scope, in case I want to stop observing the node
     this.observer = new MutationObserver(callback);
 
+    // Start observing
     this.observer.observe(targetNode, config);
   }
 }
