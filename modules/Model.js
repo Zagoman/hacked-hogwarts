@@ -128,17 +128,13 @@ export default class Model {
   }
 
   _ExpellStudent(student) {
-    console.log(student);
     student.isExpelled = true;
-    console.log(student);
     this.students.splice(this.students.indexOf(student), 1);
     this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
     this.expelledStudents.push(student);
   }
 
   _MakePrefect(student) {
-    // console.log("current student", student);
-
     const MAX_PER_HOUSE = 2;
     const MAX_PER_GENDER = 1;
     const counter = {

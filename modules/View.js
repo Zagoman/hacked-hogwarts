@@ -11,6 +11,7 @@ export default class View {
       overlay: null,
       filterTrigger: null,
       sortTrigger: null,
+      infoTrigger: null,
       expellBtn: null,
       prefectBtn: null,
       squadBtn: null,
@@ -31,6 +32,7 @@ export default class View {
     this.HTML.overlay = this.HTML.popupTemplate.querySelector(".overlay");
     this.HTML.filterTrigger = document.querySelector(".filter_trigger");
     this.HTML.sortTrigger = document.querySelector(".sort_trigger");
+    this.HTML.infoTrigger = document.querySelector(".info_trigger");
   }
 
   _ShowStudents(students) {
@@ -148,6 +150,7 @@ export default class View {
 
   // Handle sort and filter popup
   _HandleOptionsPopup() {
+    // console.log(this);
     // changes dataset according to current state
     if (this.parentNode.dataset.popup === "closed") {
       this.parentNode.dataset.popup = "open";
@@ -166,6 +169,7 @@ export default class View {
   _CloseOptions() {
     this.HTML.filterTrigger.parentElement.dataset.popup = "closed";
     this.HTML.sortTrigger.parentElement.dataset.popup = "closed";
+    this.HTML.infoTrigger.parentElement.dataset.popup = "closed";
   }
 
   _ShowInfo() {

@@ -29,9 +29,18 @@ export default class Controller {
   _InitiateEventListeners() {
     this.view.HTML.sortTrigger.addEventListener("click", this.view._HandleOptionsPopup);
     this.view.HTML.filterTrigger.addEventListener("click", this.view._HandleOptionsPopup);
+    this.view.HTML.infoTrigger.addEventListener("click", this.view._HandleOptionsPopup);
     window.addEventListener("click", (e) => {
-      if (this.view.HTML.sortTrigger.parentElement.dataset.popup === "open" || this.view.HTML.filterTrigger.parentElement.dataset.popup === "open") {
-        if (!this.view.HTML.filterTrigger.parentElement.contains(e.target) && !this.view.HTML.sortTrigger.parentElement.contains(e.target)) {
+      if (
+        this.view.HTML.sortTrigger.parentElement.dataset.popup === "open" ||
+        this.view.HTML.filterTrigger.parentElement.dataset.popup === "open" ||
+        this.view.HTML.infoTrigger.parentElement.dataset.popup === "open"
+      ) {
+        if (
+          !this.view.HTML.filterTrigger.parentElement.contains(e.target) &&
+          !this.view.HTML.sortTrigger.parentElement.contains(e.target) &&
+          !this.view.HTML.infoTrigger.parentElement.contains(e.target)
+        ) {
           this.view._CloseOptions();
         }
       }
