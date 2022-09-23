@@ -6,6 +6,7 @@ import Student from "./Student.js";
 export default class Model {
   constructor() {
     this.students = [];
+    this.info;
     this.expelledStudents = [];
     this.studentsInDisplay = [];
     this.settings = {

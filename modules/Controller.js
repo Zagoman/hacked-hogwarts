@@ -20,6 +20,7 @@ export default class Controller {
 
     // Show students in a list, by sending the students that should be displayer, and the parent node where they should be appended to
     this.view._ShowStudents(this.model.studentsInDisplay, this.view.HTML.studentsParentNode);
+    this.view._ShowInfo();
 
     // Initiate Event handlers and start the Observer
     this._InitiateEventListeners();
@@ -51,6 +52,7 @@ export default class Controller {
         this.model.settings.sortDir = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        this.view._ShowInfo();
         this._PopupEvent();
       });
     });
@@ -59,6 +61,7 @@ export default class Controller {
         this.model.settings.sortBy = el.value;
         this.model._SortStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        this.view._ShowInfo();
         this._PopupEvent();
       });
     });
@@ -68,12 +71,14 @@ export default class Controller {
         // console.log(el.value);
         this.model._FilterStudents();
         this.view._ShowStudents(this.model.studentsInDisplay);
+        this.view._ShowInfo();
         this._PopupEvent();
       });
     });
     document.querySelector("input[name='search']").addEventListener("input", (e) => {
       this.model._SearchStudents(e.target.value);
       this.view._ShowStudents(this.model.studentsInDisplay);
+      this.view._ShowInfo();
       this._PopupEvent();
     });
   }
@@ -103,8 +108,10 @@ export default class Controller {
         // Expell btn event listener
         targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
           this.model._ExpellStudent(currentStudent);
+          this.model._UpdateInfo();
           this.view.HTML.popupParentNode.firstElementChild.remove();
           this.view._ShowStudents(this.model.studentsInDisplay);
+          this.view._ShowInfo();
           this._PopupEvent();
         });
 
@@ -114,6 +121,7 @@ export default class Controller {
           this.view.HTML.popupParentNode.firstElementChild.remove();
           this.model._FilterStudents();
           this.view._ShowStudents(this.model.studentsInDisplay);
+          this.view._ShowInfo();
           this._PopupEvent();
         });
 
@@ -123,6 +131,7 @@ export default class Controller {
           this.view.HTML.popupParentNode.firstElementChild.remove();
           this.model._FilterStudents();
           this.view._ShowStudents(this.model.studentsInDisplay);
+          this.view._ShowInfo();
           this._PopupEvent();
         });
       }

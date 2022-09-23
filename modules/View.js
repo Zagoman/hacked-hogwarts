@@ -1,7 +1,7 @@
 "use strict";
 
 export default class View {
-  constructor() {
+  constructor(info) {
     // Give view access to the DOM Elements that are going to be used along the program
     this.HTML = {
       studentsParentNode: null,
@@ -16,7 +16,7 @@ export default class View {
       prefectBtn: null,
       squadBtn: null,
     };
-
+    this.info = info;
     // Calls view._Init when view is instanciated
     this._Init();
   }
@@ -174,5 +174,29 @@ export default class View {
 
   _ShowInfo() {
     console.log("show info");
+    console.log(this.info);
+
+    document.querySelectorAll("p[data-info=slytherin] span").forEach((el) => {
+      el.textContent = this.info.houseInfo.slytherin;
+    });
+    document.querySelectorAll("p[data-info=gryffindor] span").forEach((el) => {
+      el.textContent = this.info.houseInfo.gryffindor;
+    });
+    document.querySelectorAll("p[data-info=hufflepuff] span").forEach((el) => {
+      el.textContent = this.info.houseInfo.hufflepuff;
+    });
+    document.querySelectorAll("p[data-info=ravenclaw] span").forEach((el) => {
+      el.textContent = this.info.generalInfo.ravenclaw;
+    });
+    document.querySelectorAll("p[data-info=total_students] span").forEach((el) => {
+      el.textContent = this.info.generalInfo.totalStuds;
+    });
+    document.querySelectorAll("p[data-info=displayed_students] span").forEach((el) => {
+      console.log("hello");
+      el.textContent = this.info.generalInfo.displayedStuds;
+    });
+    document.querySelectorAll("p[data-info=expelled_students] span").forEach((el) => {
+      el.textContent = this.info.generalInfo.expelledStuds;
+    });
   }
 }

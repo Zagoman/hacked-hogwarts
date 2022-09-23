@@ -23,7 +23,7 @@ class Hogwarts {
     await this.model._loadJSON("https://petlatkea.dk/2021/hogwarts/students.json");
 
     // Initiate View
-    this.view = new View();
+    this.view = new View(this.model.info);
 
     // send view and model to controller so it has direct access
     this.controller = new Controller(this.model, this.view);
