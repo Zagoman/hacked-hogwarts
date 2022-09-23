@@ -134,7 +134,6 @@ export default class Model {
     this.students.splice(this.students.indexOf(student), 1);
     this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
     this.expelledStudents.push(student);
-    console.log(this.studentsInDisplay);
   }
 
   _MakePrefect(student) {
