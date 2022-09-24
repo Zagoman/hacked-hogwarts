@@ -173,9 +173,6 @@ export default class View {
   }
 
   _ShowInfo() {
-    console.log("show info");
-    console.log(this.info);
-
     document.querySelectorAll("p[data-info=slytherin] span").forEach((el) => {
       el.textContent = this.info.houseInfo.slytherin;
     });

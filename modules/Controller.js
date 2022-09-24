@@ -1,5 +1,4 @@
 "use strict";
-import { hackTheSystem } from "../main.js";
 
 export default class Controller {
   //Receives Model and View so it can communicate with both, without having Model a and view communicating with each other

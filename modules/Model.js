@@ -1,7 +1,7 @@
 "use strict";
 
 import Info from "./Info.js";
-import Student from "./Student.js";
+import { Student, SuperStudent } from "./Student.js";
 
 export default class Model {
   constructor() {
@@ -168,17 +168,14 @@ export default class Model {
       }
     } else {
       student.isPrefect = false;
-      console.log(student);
     }
   }
 
-  _RecruitToSquad(student) {
+  async _RecruitToSquad(student) {
     const HOUSE = "slytherin";
     const ACCEPTED_BLOOD_TYPE = "pure_blood";
 
-    student.clickCounter.squad++;
-
-    if (student.clickCounter.squad % 2 !== 0) {
+    if (!student.isSquad) {
       if (student.house.toLowerCase() === HOUSE || student.bloodStatus.toLowerCase() === ACCEPTED_BLOOD_TYPE) {
         student.isSquad = true;
       } else {

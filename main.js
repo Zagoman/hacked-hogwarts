@@ -34,15 +34,15 @@ class Hogwarts {
 document.addEventListener("DOMContentLoaded", () => {
   // Initiate program by instanciating the Hogwarts class
   _APP = new Hogwarts();
+  window._APP = _APP;
+  // Giving the user the opportunity to hack the system through the browser, and giving access to the function in the controller file
+  window.hackTheSystem = hackTheSystem;
 });
 
-export function hackTheSystem() {
+function hackTheSystem() {
   // If system is not hacked, literally inject a hacker into the main controller system
   if (!_APP.model.systemHacked) {
     _APP.controller.hacker = new Hacker(_APP.controller);
     _APP.model.systemHacked = true;
   }
 }
-
-// Giving the user the opportunity to hack the system through the browser
-window.hackTheSystem = hackTheSystem;
