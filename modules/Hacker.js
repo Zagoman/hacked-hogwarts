@@ -12,6 +12,7 @@ export default class Hacker {
     this.controller.model._AddStudent = this._InjectAddStudent();
     this.controller.model._ExpellStudent = this._ModiffyExpell();
     this.controller.model._RecruitToSquad = this._ModiffySquadInsertion();
+    this._RandomizeBloodStatus();
     this.controller.model._AddStudent();
     this.controller.model._FilterStudents();
     this.controller.view._ShowStudents(this.controller.model.studentsInDisplay);
@@ -74,5 +75,29 @@ export default class Hacker {
         console.log(student);
       }
     };
+  }
+
+  _RandomizeBloodStatus() {
+    let randomNumber;
+
+    this.controller.model.students.forEach((student) => {
+      randomNumber = Math.floor(Math.random() * 4);
+      if (!student instanceof SuperStudent === false) {
+        switch (randomNumber) {
+          case 0:
+            student.bloodStatus = "Half-blood";
+            break;
+          case 1:
+            student.bloodStatus = "Pure-blood";
+            break;
+          case 2:
+            student.bloodStatus = "Half-muggle";
+            break;
+          case 3:
+            student.bloodStatus = "Muggle-blood";
+            break;
+        }
+      }
+    });
   }
 }
