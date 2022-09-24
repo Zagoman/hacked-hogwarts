@@ -186,13 +186,12 @@ export default class View {
       el.textContent = this.info.houseInfo.hufflepuff;
     });
     document.querySelectorAll("p[data-info=ravenclaw] span").forEach((el) => {
-      el.textContent = this.info.generalInfo.ravenclaw;
+      el.textContent = this.info.houseInfo.ravenclaw;
     });
     document.querySelectorAll("p[data-info=total_students] span").forEach((el) => {
       el.textContent = this.info.generalInfo.totalStuds;
     });
     document.querySelectorAll("p[data-info=displayed_students] span").forEach((el) => {
-      console.log("hello");
       el.textContent = this.info.generalInfo.displayedStuds;
     });
     document.querySelectorAll("p[data-info=expelled_students] span").forEach((el) => {
