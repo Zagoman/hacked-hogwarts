@@ -37,11 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export function hackTheSystem() {
+  // If system is not hacked, literally inject a hacker into the main controller system
   if (!_APP.model.systemHacked) {
-    console.log(_APP.controller);
-    setTimeout(() => {
-      _APP.controller.hacker = new Hacker(_APP.controller);
-      _APP.model.systemHacked = true;
-    }, 3000);
+    _APP.controller.hacker = new Hacker(_APP.controller);
+    _APP.model.systemHacked = true;
   }
 }
+
+// Giving the user the opportunity to hack the system through the browser
+window.hackTheSystem = hackTheSystem;

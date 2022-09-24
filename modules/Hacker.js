@@ -7,6 +7,6 @@ export default class Hacker {
   }
 
   _Init() {
-    console.log(this.controller);
+    console.log("YOUR SYSTEM HAS BEEN HACKED");
   }
 }
