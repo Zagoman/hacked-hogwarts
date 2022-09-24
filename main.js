@@ -2,6 +2,7 @@
 import Controller from "./modules/Controller.js";
 import Model from "./modules/Model.js";
 import View from "./modules/View.js";
+import Hacker from "./modules/Hacker.js";
 
 let _APP = null;
 
@@ -34,3 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initiate program by instanciating the Hogwarts class
   _APP = new Hogwarts();
 });
+
+export function hackTheSystem() {
+  if (!_APP.model.systemHacked) {
+    console.log(_APP.controller);
+    setTimeout(() => {
+      _APP.controller.hacker = new Hacker(_APP.controller);
+      _APP.model.systemHacked = true;
+    }, 3000);
+  }
+}

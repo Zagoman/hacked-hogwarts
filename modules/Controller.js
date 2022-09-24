@@ -1,4 +1,5 @@
 "use strict";
+import { hackTheSystem } from "../main.js";
 
 export default class Controller {
   //Receives Model and View so it can communicate with both, without having Model a and view communicating with each other
@@ -31,6 +32,7 @@ export default class Controller {
     this.view.HTML.sortTrigger.addEventListener("click", this.view._HandleOptionsPopup);
     this.view.HTML.filterTrigger.addEventListener("click", this.view._HandleOptionsPopup);
     this.view.HTML.infoTrigger.addEventListener("click", this.view._HandleOptionsPopup);
+    document.querySelector("#hack").addEventListener("click", hackTheSystem);
     window.addEventListener("click", (e) => {
       if (
         this.view.HTML.sortTrigger.parentElement.dataset.popup === "open" ||
@@ -108,9 +110,10 @@ export default class Controller {
         // Expell btn event listener
         targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
           this.model._ExpellStudent(currentStudent);
-          this.model._UpdateInfo();
           this.view.HTML.popupParentNode.firstElementChild.remove();
           this.view._ShowStudents(this.model.studentsInDisplay);
+          this.model.info._ResetInfo();
+          this.model._UpdateInfo();
           this.view._ShowInfo();
           this._PopupEvent();
         });

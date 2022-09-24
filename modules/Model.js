@@ -7,6 +7,7 @@ export default class Model {
   constructor() {
     this.students = [];
     this.info;
+    this.systemHacked = false;
     this.expelledStudents = [];
     this.studentsInDisplay = [];
     this.settings = {
