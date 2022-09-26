@@ -18,7 +18,6 @@ export default class Hacker {
     this.controller.view._ShowStudents(this.controller.model.studentsInDisplay);
     this.controller.view._ShowInfo();
     this.controller._PopupEvent();
-    console.log(this.controller.model.students);
   }
 
   _InjectAddStudent() {
