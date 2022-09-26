@@ -15,6 +15,7 @@ export default class View {
       expellBtn: null,
       prefectBtn: null,
       squadBtn: null,
+      notificationsParent: null,
     };
     this.info = info;
     // Calls view._Init when view is instanciated
@@ -33,6 +34,7 @@ export default class View {
     this.HTML.filterTrigger = document.querySelector(".filter_trigger");
     this.HTML.sortTrigger = document.querySelector(".sort_trigger");
     this.HTML.infoTrigger = document.querySelector(".info_trigger");
+    this.HTML.notificationsParent = document.querySelector(".notifications");
   }
 
   _ShowStudents(students) {
@@ -215,5 +217,21 @@ export default class View {
     document.querySelectorAll("p[data-info=expelled_students] span").forEach((el) => {
       el.textContent = this.info.generalInfo.expelledStuds;
     });
+  }
+
+  _Notify(notificationText) {
+    let notification = document.createElement("div");
+    let text = document.createElement("span");
+    let bell = document.createElement("img");
+    bell.classList.add("notification_bell");
+    bell.src = "./images/graphics/notification.svg";
+    notification.classList.add("single_notification");
+    text.textContent = notificationText;
+    notification.insertAdjacentElement("afterbegin", bell);
+    notification.insertAdjacentElement("beforeend", text);
+    notification.addEventListener("animationend", () => {
+      notification.remove();
+    });
+    this.HTML.notificationsParent.insertAdjacentElement("afterbegin", notification);
   }
 }

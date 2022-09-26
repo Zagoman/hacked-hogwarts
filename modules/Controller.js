@@ -55,6 +55,7 @@ export default class Controller {
         this.view._ShowStudents(this.model.studentsInDisplay);
         this.view._ShowInfo();
         this._PopupEvent();
+        _APP.view._Notify(`Students sorted by ${this.model.settings.sortBy} from ${this.model.settings.sortDir}`);
       });
     });
     document.querySelectorAll('input[name="sort_option"]').forEach((el) => {
@@ -64,6 +65,7 @@ export default class Controller {
         this.view._ShowStudents(this.model.studentsInDisplay);
         this.view._ShowInfo();
         this._PopupEvent();
+        this.view._Notify(`Students sorted by ${this.model.settings.sortBy} from ${this.model.settings.sortDir}`);
       });
     });
     document.querySelectorAll('input[name="filter_opt"]').forEach((el) => {
@@ -74,6 +76,7 @@ export default class Controller {
         this.view._ShowStudents(this.model.studentsInDisplay);
         this.view._ShowInfo();
         this._PopupEvent();
+        this.view._Notify(`Students filtered by ${this.model.settings.filterBy}`);
       });
     });
     document.querySelector("input[name='search']").addEventListener("input", (e) => {

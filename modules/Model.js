@@ -130,6 +130,8 @@ export default class Model {
   }
 
   _ExpellStudent(student) {
+    let studentName = student.fullName;
+    _APP.view._Notify(`${studentName} has been expelled`);
     student.isExpelled = true;
     this.students.splice(this.students.indexOf(student), 1);
     this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
@@ -160,6 +162,7 @@ export default class Model {
       if (counter.prefects < MAX_PER_HOUSE) {
         if (counter[student.gender.toLowerCase()] < MAX_PER_GENDER) {
           student.isPrefect = true;
+          _APP.view._Notify(`${student.fullName} is now a Prefect`);
         } else {
           alert(`There can only be ${MAX_PER_GENDER} ${student.gender.toLowerCase()} as a prefect in ${student.house}`);
         }
@@ -178,6 +181,7 @@ export default class Model {
     if (!student.isSquad) {
       if (student.house.toLowerCase() === HOUSE || student.bloodStatus.toLowerCase() === ACCEPTED_BLOOD_TYPE) {
         student.isSquad = true;
+        _APP.view._Notify(`${student.fullName} is now part of Inquisitory Squad`);
       } else {
         alert(`To be part of the Inquisitory Squad you must be from ${HOUSE} or be a ${ACCEPTED_BLOOD_TYPE}`);
       }

@@ -123,7 +123,36 @@ li a {
   display: flex;
   justify-content: space-between;
 }
-
+.notifications {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  position: absolute;
+  inset: auto auto 1rem 1rem;
+  transition: all 200ms ease;
+}
+.single_notification {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-900);
+  border: 2px solid var(--color-100);
+  border-radius: var(--border-radius_general);
+  opacity: 0;
+  animation-name: notification;
+  animation-duration: 1.5s; /* or: Xms */
+  animation-iteration-count: 2;
+  animation-direction: alternate; /* or: normal */
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-delay: 1s;
+}
+.notification_bell {
+  width: 30px;
+}
 /* ! Students */
 #students {
   display: grid;
@@ -488,5 +517,22 @@ a[data-action="cancel"]:hover {
     display: flex;
     gap: var(--sp-l);
     grid-column: 1/2;
+  }
+  .notifications {
+    inset: auto 1rem 1rem auto;
+  }
+}
+
+@keyframes notification {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
