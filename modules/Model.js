@@ -156,7 +156,7 @@ export default class Model {
       }
     }
 
-    if (student.clickCounter.prefect % 2 !== 0) {
+    if (!student.isPrefect) {
       if (counter.prefects < MAX_PER_HOUSE) {
         if (counter[student.gender.toLowerCase()] < MAX_PER_GENDER) {
           student.isPrefect = true;
