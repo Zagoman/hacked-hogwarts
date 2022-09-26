@@ -32,6 +32,7 @@ export default class Hacker {
       newStudent.bloodStatus = "Pure-blood";
       newStudent.gender = "Boy";
       newStudent.fullName = "Emmanuel Smith";
+      newStudent.imageSrc = "./images/smith_e.png";
 
       this.students.push(newStudent);
     };

@@ -48,6 +48,17 @@ export default class View {
       clone.querySelector("p[data-name-order = nick_name]").textContent = student.nickName;
       clone.querySelector("p[data-house = house]").textContent = student.house;
       clone.querySelector(".btn").dataset.studId = student.id;
+
+      if (student.isPrefect) {
+        let badge = document.createElement("img");
+        badge.src = "./images/graphics/prefect.svg";
+        clone.querySelector(".badges_container").appendChild(badge);
+      }
+      if (student.isSquad) {
+        let badge = document.createElement("img");
+        badge.src = "./images/graphics/squad.svg";
+        clone.querySelector(".badges_container").appendChild(badge);
+      }
       if (student.imageSrc) {
         clone.querySelector("img").src = student.imageSrc;
       }
@@ -129,6 +140,16 @@ export default class View {
       clone.querySelector("a[data-action='prefect']").remove();
     }
 
+    if (currentStudent.isPrefect) {
+      let badge = document.createElement("img");
+      badge.src = "./images/graphics/prefect.svg";
+      clone.querySelector(".badges_container").appendChild(badge);
+    }
+    if (currentStudent.isSquad) {
+      let badge = document.createElement("img");
+      badge.src = "./images/graphics/squad.svg";
+      clone.querySelector(".badges_container").appendChild(badge);
+    }
     // Set background to House's background image
     clone.querySelector("article").style.backgroundImage = `url(images/graphics/${currentStudent.house}_bg.webp)`;
 

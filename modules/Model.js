@@ -173,7 +173,7 @@ export default class Model {
 
   async _RecruitToSquad(student) {
     const HOUSE = "slytherin";
-    const ACCEPTED_BLOOD_TYPE = "pure_blood";
+    const ACCEPTED_BLOOD_TYPE = "pure-blood";
 
     if (!student.isSquad) {
       if (student.house.toLowerCase() === HOUSE || student.bloodStatus.toLowerCase() === ACCEPTED_BLOOD_TYPE) {

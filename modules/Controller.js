@@ -103,39 +103,47 @@ export default class Controller {
     // Set a callback to when a mutation on the popup parent node is observed
     const callback = (mutationList, observer) => {
       if (mutationList[0].addedNodes.length > 0) {
-        let currentStudent = this.model.students[Number(this.model.students.findIndex(findStudent))];
+        let currentStudent;
+        if (this.model.students[Number(this.model.students.findIndex(findStudent))]) {
+          currentStudent = this.model.students[Number(this.model.students.findIndex(findStudent))];
+        } else {
+          currentStudent = this.model.expelledStudents[Number(this.model.expelledStudents.findIndex(findStudent))];
+        }
         // !Event Listeners when popup is open
 
-        // Expell btn event listener
-        targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
-          this.model._ExpellStudent(currentStudent);
-          this.view.HTML.popupParentNode.firstElementChild.remove();
-          this.view._ShowStudents(this.model.studentsInDisplay);
-          this.model.info._ResetInfo();
-          this.model._UpdateInfo();
-          this.view._ShowInfo();
-          this._PopupEvent();
-        });
+        if (!currentStudent.isExpelled) {
+          // Expell btn event listener
 
-        // Prefect btn event listener
-        targetNode.querySelector("a[data-action='prefect']").addEventListener("click", (e) => {
-          this.model._MakePrefect(currentStudent);
-          this.view.HTML.popupParentNode.firstElementChild.remove();
-          this.model._FilterStudents();
-          this.view._ShowStudents(this.model.studentsInDisplay);
-          this.view._ShowInfo();
-          this._PopupEvent();
-        });
+          targetNode.querySelector("a[data-action='expell']").addEventListener("click", (e) => {
+            this.model._ExpellStudent(currentStudent);
+            this.view.HTML.popupParentNode.firstElementChild.remove();
+            this.view._ShowStudents(this.model.studentsInDisplay);
+            this.model.info._ResetInfo();
+            this.model._UpdateInfo();
+            this.view._ShowInfo();
+            this._PopupEvent();
+          });
 
-        // Squad btn event listener
-        targetNode.querySelector("a[data-action='squad']").addEventListener("click", (e) => {
-          this.model._RecruitToSquad(currentStudent);
-          this.view.HTML.popupParentNode.firstElementChild.remove();
-          this.model._FilterStudents();
-          this.view._ShowStudents(this.model.studentsInDisplay);
-          this.view._ShowInfo();
-          this._PopupEvent();
-        });
+          // Prefect btn event listener
+          targetNode.querySelector("a[data-action='prefect']").addEventListener("click", (e) => {
+            this.model._MakePrefect(currentStudent);
+            this.view.HTML.popupParentNode.firstElementChild.remove();
+            this.model._FilterStudents();
+            this.view._ShowStudents(this.model.studentsInDisplay);
+            this.view._ShowInfo();
+            this._PopupEvent();
+          });
+
+          // Squad btn event listener
+          targetNode.querySelector("a[data-action='squad']").addEventListener("click", (e) => {
+            this.model._RecruitToSquad(currentStudent);
+            this.view.HTML.popupParentNode.firstElementChild.remove();
+            this.model._FilterStudents();
+            this.view._ShowStudents(this.model.studentsInDisplay);
+            this.view._ShowInfo();
+            this._PopupEvent();
+          });
+        }
       }
     };
 
