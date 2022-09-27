@@ -216,8 +216,54 @@ li a {
 .badges_container {
   max-width: 24px;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xxs);
+}
+.banner {
+  margin-top: auto;
 }
 
+/* Hacking */
+.hacking_screen {
+  position: absolute;
+  inset: 0 0 0 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.loading {
+  width: 80%;
+  max-width: 600px;
+  height: 80px;
+  border: 4px solid green;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.loading_sprite {
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background-color: green;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: none;
+  animation-delay: 0s;
+}
+.hacking_text {
+  color: green;
+  font-family: monospace;
+  margin-bottom: var(--sp-m);
+}
+/* End of hacking */
 /* !end of students */
 
 #opt_relative {
@@ -534,5 +580,20 @@ a[data-action="cancel"]:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-80%);
+  }
+  90% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

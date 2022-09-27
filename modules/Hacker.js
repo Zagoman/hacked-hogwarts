@@ -9,6 +9,7 @@ export default class Hacker {
 
   _Init() {
     console.log("YOUR SYSTEM HAS BEEN HACKED");
+    this._HackingScreen();
     this.controller.model._AddStudent = this._InjectAddStudent();
     this.controller.model._ExpellStudent = this._ModiffyExpell();
     this.controller.model._RecruitToSquad = this._ModiffySquadInsertion();
@@ -20,20 +21,51 @@ export default class Hacker {
     this.controller._PopupEvent();
   }
 
+  _HackingScreen() {
+    let screen = document.createElement("div");
+    screen.classList.add("hacking_screen");
+    let loadingSprite = document.createElement("div");
+    loadingSprite.classList.add("loading_sprite");
+    let loading = document.createElement("div");
+    loading.classList.add("loading");
+    let text = document.createElement("h1");
+    text.textContent = "Hacking your system";
+    text.classList.add("hacking_text");
+    loading.append(loadingSprite);
+    screen.append(loading);
+    screen.insertAdjacentElement("afterbegin", text);
+    document.body.append(screen);
+
+    document.querySelector(".loading_sprite").addEventListener("animationend", () => {
+      document.querySelector(".hacking_screen").remove();
+    });
+  }
+
   _InjectAddStudent() {
     return function () {
       const newStudent = new SuperStudent();
       newStudent.firstName = "Emmanuel";
       newStudent.lastName = "Smith";
       newStudent.nickName = "Em";
-      newStudent.house = "Slytherin";
+      newStudent.house = "Gryffindor";
       newStudent.id = this.students.length + this.expelledStudents.length + 1;
       newStudent.bloodStatus = "Pure-blood";
       newStudent.gender = "Boy";
       newStudent.fullName = "Emmanuel Smith";
       newStudent.imageSrc = "./images/smith_e.png";
-
       this.students.push(newStudent);
+
+      const me = new SuperStudent();
+      me.firstName = "Lucas";
+      me.middleName = "Zago";
+      me.lastName = "Sousa";
+      me.house = "Slytherin";
+      me.id = this.students.length + this.expelledStudents.length + 1;
+      me.bloodStatus = "Pure-blood";
+      me.gender = "Boy";
+      me.fullName = "Lucas Zago Sousa";
+      me.imageSrc = "./images/sousa_l.png";
+      this.students.push(me);
     };
   }
 
@@ -42,6 +74,7 @@ export default class Hacker {
       console.log(student instanceof SuperStudent);
       if (student instanceof SuperStudent === false) {
         student.isExpelled = true;
+        _APP.view._Notify(`${student.fullName} has been expelled`);
         this.students.splice(this.students.indexOf(student), 1);
         this.studentsInDisplay.splice(this.studentsInDisplay.indexOf(student), 1);
         this.expelledStudents.push(student);
@@ -62,6 +95,7 @@ export default class Hacker {
           setTimeout(() => {
             student.isSquad = false;
             alert(`${student.fullName} removed from inquisition squad`);
+            _APP.view._Notify(`${student.fullName} removed from inquisition squad`);
             this._FilterStudents();
             _APP.view._ShowStudents(_APP.model.studentsInDisplay);
             _APP.view._ShowInfo();
@@ -81,22 +115,23 @@ export default class Hacker {
     let randomNumber;
 
     this.controller.model.students.forEach((student) => {
-      randomNumber = Math.floor(Math.random() * 4);
-      if (!student instanceof SuperStudent === false) {
-        switch (randomNumber) {
-          case 0:
-            student.bloodStatus = "Half-blood";
-            break;
-          case 1:
-            student.bloodStatus = "Pure-blood";
-            break;
-          case 2:
-            student.bloodStatus = "Half-muggle";
-            break;
-          case 3:
-            student.bloodStatus = "Muggle-blood";
-            break;
+      if (student.bloodStatus.toLowerCase() === "pure-blood") {
+        randomNumber = Math.floor(Math.random() * 3);
+        if (!student instanceof SuperStudent === false) {
+          switch (randomNumber) {
+            case 0:
+              student.bloodStatus = "Half-blood";
+              break;
+            case 1:
+              student.bloodStatus = "Half-muggle";
+              break;
+            case 2:
+              student.bloodStatus = "Muggle-blood";
+              break;
+          }
         }
+      } else {
+        student.bloodStatus = "Pure-blood";
       }
     });
   }

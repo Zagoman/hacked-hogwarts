@@ -1,0 +1,172 @@
+<mxfile host="65bd71144e">
+    <diagram id="6xdQwz2_wDzlMQMAToCd" name="Page-1">
+        <mxGraphModel dx="1742" dy="1118" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="line;strokeWidth=1;direction=south;html=1;dashed=1;dashPattern=20 20;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="40" width="10" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Model" style="text;align=center;fontSize=16;fontStyle=1;spacing=-1;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="20" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="View" style="text;align=center;fontSize=16;fontStyle=1;spacing=-1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="20" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="line;strokeWidth=1;direction=south;html=1;dashed=1;dashPattern=20 20;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="40" width="10" height="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Controller" style="text;align=center;fontSize=16;fontStyle=1;spacing=-1;" vertex="1" parent="1">
+                    <mxGeometry x="670" y="20" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="19" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="580" y="80" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="140" y="75"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="student" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7">
+                    <mxGeometry x="0.3921" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=160;exitDy=40;exitPerimeter=0;" edge="1" parent="1" source="11" target="16">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="620" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Squad btn clicked" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="70" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="13" target="23">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="25" y="160"/>
+                            <mxPoint x="25" y="300"/>
+                            <mxPoint x="135" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="_RecruitToSquad" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="140" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="_FilterStudents" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="220" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="ShowStudents" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="270" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="ShowInfo" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="340" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="PopupEvent" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="400" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=none;" edge="1" parent="1" source="11" target="14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="630" y="99.99999999999994" as="sourcePoint"/>
+                        <mxPoint x="150" y="150" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="310" y="90"/>
+                            <mxPoint x="310" y="200"/>
+                            <mxPoint x="140" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="610" y="70" width="10" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="22" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="400" y="105"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="studentsInDisplay" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="20">
+                    <mxGeometry x="0.6467" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="610" y="100" width="10" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="whiteSpace=wrap;html=1;dashed=1;fillColor=none;pointerEvents=0;allowArrows=0;rounded=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="10" y="470" width="610" height="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Recruit to Squad" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="95" y="480" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="Define a House that can always be accepted" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;rounded=1;pointerEvents=0;fillColor=none;perimeterSpacing=0;labelBackgroundColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="510" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Define the blood type that can be accepted" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;rounded=1;pointerEvents=0;fillColor=none;perimeterSpacing=0;labelBackgroundColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="590" width="210" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="whiteSpace=wrap;html=1;dashed=1;fillColor=none;pointerEvents=0;allowArrows=0;rounded=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="40" y="690" width="540" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="745" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="48">
+                    <mxGeometry x="-0.1722" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="55">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="50">
+                    <mxGeometry x="-0.3713" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="" style="rhombus;rounded=0;pointerEvents=0;fillColor=none;strokeColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="730" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="false" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="55">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="815" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="true" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="55" target="65">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="275" y="870" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="" style="rhombus;rounded=0;pointerEvents=0;strokeColor=default;fillColor=none;labelBackgroundColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="800" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="student.house === accepted house&lt;br&gt;or student.bloodStatus === accepted blood status" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="800" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="student is already from squad" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="735" width="170" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="checking if student is allowed to be part of the squad" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="700" width="290" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="student.isSquad = false" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;labelBackgroundColor=none;pointerEvents=0;strokeColor=default;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="730" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="Alert(Max per house reached)" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;labelBackgroundColor=none;pointerEvents=0;strokeColor=default;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="795" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="student.isSquad = true" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;labelBackgroundColor=none;pointerEvents=0;strokeColor=default;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="890" width="170" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

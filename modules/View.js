@@ -50,16 +50,17 @@ export default class View {
       clone.querySelector("p[data-name-order = nick_name]").textContent = student.nickName;
       clone.querySelector("p[data-house = house]").textContent = student.house;
       clone.querySelector(".btn").dataset.studId = student.id;
+      clone.querySelector(".banner").src = `./images/graphics/${student.house}_banner.svg`;
 
       if (student.isPrefect) {
         let badge = document.createElement("img");
         badge.src = "./images/graphics/prefect.svg";
-        clone.querySelector(".badges_container").appendChild(badge);
+        clone.querySelector(".badges_container").insertAdjacentElement("afterbegin", badge);
       }
       if (student.isSquad) {
         let badge = document.createElement("img");
         badge.src = "./images/graphics/squad.svg";
-        clone.querySelector(".badges_container").appendChild(badge);
+        clone.querySelector(".badges_container").insertAdjacentElement("afterbegin", badge);
       }
       if (student.imageSrc) {
         clone.querySelector("img").src = student.imageSrc;
@@ -100,6 +101,7 @@ export default class View {
     clone.querySelector("p[data-name-order = nick_name]").textContent = currentStudent.nickName;
     clone.querySelector("p[data-house = house]").textContent = currentStudent.house;
     clone.querySelector("p[data-blood = blood]").textContent = currentStudent.bloodStatus;
+    clone.querySelector(".banner").src = `./images/graphics/${currentStudent.house}_banner.svg`;
     clone.querySelector(".btn").dataset.studId = currentStudent.id;
 
     // Populate image only if student has an image src, otherwise use default.
@@ -145,12 +147,12 @@ export default class View {
     if (currentStudent.isPrefect) {
       let badge = document.createElement("img");
       badge.src = "./images/graphics/prefect.svg";
-      clone.querySelector(".badges_container").appendChild(badge);
+      clone.querySelector(".badges_container").insertAdjacentElement("afterbegin", badge);
     }
     if (currentStudent.isSquad) {
       let badge = document.createElement("img");
       badge.src = "./images/graphics/squad.svg";
-      clone.querySelector(".badges_container").appendChild(badge);
+      clone.querySelector(".badges_container").insertAdjacentElement("afterbegin", badge);
     }
     // Set background to House's background image
     clone.querySelector("article").style.backgroundImage = `url(images/graphics/${currentStudent.house}_bg.webp)`;
