@@ -101,7 +101,7 @@ export default class View {
     clone.querySelector("p[data-name-order = nick_name]").textContent = currentStudent.nickName;
     clone.querySelector("p[data-house = house]").textContent = currentStudent.house;
     clone.querySelector("p[data-blood = blood]").textContent = currentStudent.bloodStatus;
-    clone.querySelector(".banner").src = `./images/graphics/${currentStudent.house}_banner.svg`;
+    clone.querySelector(".banner").src = `./images/graphics/${currentStudent.house.toLowerCase()}_banner.svg`;
     clone.querySelector(".btn").dataset.studId = currentStudent.id;
 
     // Populate image only if student has an image src, otherwise use default.
