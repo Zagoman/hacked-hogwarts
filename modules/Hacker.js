@@ -71,7 +71,6 @@ export default class Hacker {
 
   _ModiffyExpell() {
     return function (student) {
-      console.log(student instanceof SuperStudent);
       if (student instanceof SuperStudent === false) {
         student.isExpelled = true;
         _APP.view._Notify(`${student.fullName} has been expelled`);

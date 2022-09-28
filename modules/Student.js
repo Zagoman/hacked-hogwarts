@@ -131,6 +131,7 @@ class Student {
 class SuperStudent extends Student {
   constructor(id) {
     super(id);
+    this.isHacker = true;
   }
 }
 
