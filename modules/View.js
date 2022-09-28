@@ -155,7 +155,7 @@ export default class View {
       clone.querySelector(".badges_container").insertAdjacentElement("afterbegin", badge);
     }
     // Set background to House's background image
-    clone.querySelector("article").style.backgroundImage = `url(images/graphics/${currentStudent.house}_bg.webp)`;
+    clone.querySelector("article").style.backgroundImage = `url(images/graphics/${currentStudent.house.toLowerCase()}_bg.webp)`;
 
     //Clone's Event Listeners
     clone.querySelector(".overlay").addEventListener("click", (e) => {
