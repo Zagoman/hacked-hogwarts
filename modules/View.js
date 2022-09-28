@@ -50,7 +50,7 @@ export default class View {
       clone.querySelector("p[data-name-order = nick_name]").textContent = student.nickName;
       clone.querySelector("p[data-house = house]").textContent = student.house;
       clone.querySelector(".btn").dataset.studId = student.id;
-      clone.querySelector(".banner").src = `./images/graphics/${student.house}_banner.svg`;
+      clone.querySelector(".banner").src = `./images/graphics/${student.house.toLowerCase()}_banner.svg`;
 
       if (student.isPrefect) {
         let badge = document.createElement("img");
